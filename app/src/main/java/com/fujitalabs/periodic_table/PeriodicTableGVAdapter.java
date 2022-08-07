@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,8 +16,8 @@ import java.util.ArrayList;
 
 public class PeriodicTableGVAdapter extends ArrayAdapter<ChemicalElement> {
 
-    public PeriodicTableGVAdapter(@NonNull Context context, ArrayList<ChemicalElement> courseModelArrayList) {
-        super(context, 0, courseModelArrayList);
+    public PeriodicTableGVAdapter(@NonNull Context context, ArrayList<ChemicalElement> ChemicalElementList) {
+        super(context, 0, ChemicalElementList);
     }
 
     @NonNull
@@ -28,12 +29,12 @@ public class PeriodicTableGVAdapter extends ArrayAdapter<ChemicalElement> {
             listitemView = LayoutInflater.from(getContext()).inflate(R.layout.element_block_layout, parent, false);
         }
 
-        listitemView.setClickable(false);
         ChemicalElement chemicalElement = getItem(position);
 
         if (chemicalElement == null) {
             listitemView.setVisibility(View.GONE);
             listitemView.setEnabled(false);
+            listitemView.setClickable(false);
         } else {
             listitemView.setVisibility(View.VISIBLE);
             listitemView.setEnabled(true);
@@ -47,14 +48,14 @@ public class PeriodicTableGVAdapter extends ArrayAdapter<ChemicalElement> {
 
             if (chemicalElement.getName().equals("")) {
                 if (chemicalElement.getSymbol().equals("La")) {
-                    tvAtomicNumber.setText("57-71");
-                    tvName.setText("");
+                    tvName.setText("Lanthanoids");
                     tvSymbol.setText("");
+                    tvAtomicNumber.setText("57-71");
                     tvAtomicWeight.setText("");
                 } else if (chemicalElement.getSymbol().equals("Ac")) {
-                    tvAtomicNumber.setText("89-103");
-                    tvName.setText("");
+                    tvName.setText("Actinoids");
                     tvSymbol.setText("");
+                    tvAtomicNumber.setText("89-103");
                     tvAtomicWeight.setText("");
                 }
             } else {
@@ -67,6 +68,14 @@ public class PeriodicTableGVAdapter extends ArrayAdapter<ChemicalElement> {
                     tvAtomicWeight.setText(Float.toString(chemicalElement.getAtomicWeight()));
                 }
             }
+
+            listitemView.setClickable(true);
+            listitemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(parent.getContext(), position + " " + chemicalElement.getName(), Toast.LENGTH_SHORT).show();
+                }
+            });
         }
 
         return listitemView;

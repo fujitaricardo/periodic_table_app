@@ -5,8 +5,8 @@
     android:id="@+id/cv_element_card"
     android:layout_width="100dp"
     android:layout_height="100dp"
-    app:cardCornerRadius="15dp"
-    app:cardElevation="5dp" >
+    app:cardCornerRadius="20dp"
+    app:cardElevation="5dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -33,6 +33,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toStartOf="@id/gl_horizontal_atomic_number"
             app:layout_constraintTop_toBottomOf="@id/gl_vertical_atomic_number"
+            android:textColor="@color/black"
             android:text="1"
             android:textSize="12dp"/>
 
@@ -50,6 +51,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/gl_symbol"
+            android:textColor="@color/black"
             android:text="H"
             android:textSize="40dp"
             android:textStyle="bold"/>
@@ -69,6 +71,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/gl_name"
+            android:textColor="@color/black"
             android:text="Hydrogen"
             android:textSize="12dp"
             android:textStyle="bold"/>
@@ -87,6 +90,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/gl_atomic_weight"
+            android:textColor="@color/black"
             android:text="1.008"
             android:textSize="12dp"/>
 

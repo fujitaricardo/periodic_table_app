@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item1"
+        android:title="Search" />
+
+    <item
+        android:id="@+id/item2"
+        android:title="Screen Rotation" />
+
+    <item
+        android:id="@+id/item3"
+        android:title="Theme" />
+
+    <item
+        android:id="@+id/item4"
+        android:title="Language" />
+
+    <item
+        android:id="@+id/item5"
+        android:title="Feedback and Contact" />
+
+    <item
+        android:id="@+id/item6"
+        android:title="Privacy Policy" />
+
+    <item
+        android:id="@+id/item7"
+        android:title="About" />
+
+</menu>

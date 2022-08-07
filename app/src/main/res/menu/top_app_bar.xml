@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/ic_outline_search_30"
+        android:title="Search"
+        android:contentDescription="Search elements by key words"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/filter"
+        android:icon="@drawable/ic_outline_filter_alt_30"
+        android:title="Filter"
+        android:contentDescription="Filter elements by category"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/rotate"
+        android:icon="@drawable/ic_outline_screen_rotation_30"
+        android:title="Switch screen rotation"
+        android:contentDescription="Switch screen rotation to horizontal"
+        app:showAsAction="always" />
+
+</menu>

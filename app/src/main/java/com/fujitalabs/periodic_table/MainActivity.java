@@ -1,9 +1,14 @@
 package com.fujitalabs.periodic_table;
 
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.View;
 import android.widget.GridView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.appbar.MaterialToolbar;
 
 import java.util.ArrayList;
 
@@ -16,8 +21,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         periodicTableGV = findViewById(R.id.gv_periodic_table);
+        MaterialToolbar materialToolbar = findViewById(R.id.mt_top_app_bar);
+        DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
+        materialToolbar.setTitle(getString(R.string.app_name));
 
         ArrayList<ChemicalElement> chemicalElements = getChemicalElementsList();
+
+        materialToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.openDrawer(Gravity.LEFT);
+            }
+        });
 
         PeriodicTableGVAdapter periodicTableGVAdapter = new PeriodicTableGVAdapter(this, chemicalElements);
         periodicTableGV.setAdapter(periodicTableGVAdapter);
