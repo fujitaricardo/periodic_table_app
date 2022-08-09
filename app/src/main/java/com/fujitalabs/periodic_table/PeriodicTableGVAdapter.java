@@ -6,18 +6,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.FragmentManager;
 
 import java.util.ArrayList;
 
 public class PeriodicTableGVAdapter extends ArrayAdapter<ChemicalElement> {
 
-    public PeriodicTableGVAdapter(@NonNull Context context, ArrayList<ChemicalElement> ChemicalElementList) {
+    private FragmentManager fragmentManager;
+    private PeriodTableListener periodTableListener;
+
+    public PeriodicTableGVAdapter(@NonNull Context context, ArrayList<ChemicalElement> ChemicalElementList, PeriodTableListener periodTableListener) {
         super(context, 0, ChemicalElementList);
+        this.periodTableListener = periodTableListener;
     }
 
     @NonNull
@@ -69,15 +73,21 @@ public class PeriodicTableGVAdapter extends ArrayAdapter<ChemicalElement> {
                 }
             }
 
-            listitemView.setClickable(true);
-            listitemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(parent.getContext(), position + " " + chemicalElement.getName(), Toast.LENGTH_SHORT).show();
-                }
-            });
+            if (!chemicalElement.getName().isEmpty()) {
+                listitemView.setClickable(true);
+                listitemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        periodTableListener.onElementSelected(position);
+                    }
+                });
+            }
         }
 
         return listitemView;
+    }
+
+    public interface PeriodTableListener {
+        public void onElementSelected(int selectedElementIndex);
     }
 }

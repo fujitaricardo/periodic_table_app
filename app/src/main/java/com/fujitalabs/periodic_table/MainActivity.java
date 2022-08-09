@@ -1,31 +1,43 @@
 package com.fujitalabs.periodic_table;
 
+import static com.google.android.material.bottomsheet.BottomSheetBehavior.STATE_COLLAPSED;
+
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.GridView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     GridView periodicTableGV;
+    LinearLayout elementBottomSheet;
+    BottomSheetBehavior bottomSheetBehavior;
+    ArrayList<ChemicalElement> chemicalElements;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         periodicTableGV = findViewById(R.id.gv_periodic_table);
         MaterialToolbar materialToolbar = findViewById(R.id.mt_top_app_bar);
         DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
-        materialToolbar.setTitle(getString(R.string.app_name));
+        elementBottomSheet = findViewById(R.id.ll_bottom_sheet);
+        bottomSheetBehavior = BottomSheetBehavior.from(elementBottomSheet);
+        chemicalElements = getChemicalElementsList();
 
-        ArrayList<ChemicalElement> chemicalElements = getChemicalElementsList();
+        materialToolbar.setTitle(getString(R.string.app_name));
 
         materialToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,8 +46,42 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        PeriodicTableGVAdapter periodicTableGVAdapter = new PeriodicTableGVAdapter(this, chemicalElements);
+        PeriodicTableGVAdapter periodicTableGVAdapter = new PeriodicTableGVAdapter(this, chemicalElements, new mPeriodTableListener());
         periodicTableGV.setAdapter(periodicTableGVAdapter);
+    }
+
+    private class mPeriodTableListener implements PeriodicTableGVAdapter.PeriodTableListener {
+        @Override
+        public void onElementSelected(int selectedElementIndex) {
+            ChemicalElement chemicalElement = chemicalElements.get(selectedElementIndex);
+
+            TextView name = elementBottomSheet.findViewById(R.id.tv_name);
+            TextView symbol = elementBottomSheet.findViewById(R.id.tv_symbol);
+            TextView atomicNumber = elementBottomSheet.findViewById(R.id.tv_atomic_number);
+            TextView atomicWeight = elementBottomSheet.findViewById(R.id.tv_atomic_weight);
+            TextView seeMore = elementBottomSheet.findViewById(R.id.tv_see_more);
+
+            name.setText(chemicalElement.getName());
+            symbol.setText(chemicalElement.getSymbol());
+            atomicNumber.setText(Integer.toString(chemicalElement.getAtomicNumber()));
+            if (chemicalElement.getAtomicWeight() == -1) {
+                atomicWeight.setText("unknown");
+            } else {
+                atomicWeight.setText("unknown");
+                atomicWeight.setText(Float.toString(chemicalElement.getAtomicWeight()));
+            }
+            seeMore.setText("SEE MORE");
+            seeMore.setClickable(true);
+            seeMore.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(getBaseContext(), "Clicked on see more!", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            elementBottomSheet.setVisibility(View.VISIBLE);
+            bottomSheetBehavior.setState(STATE_COLLAPSED);
+        }
     }
 
     private ArrayList<ChemicalElement> getChemicalElementsList() {
