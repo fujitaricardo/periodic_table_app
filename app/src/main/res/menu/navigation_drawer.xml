@@ -1,32 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/item1"
-        android:title="Search" />
+    <group android:id="@+id/group1">
+        <item
+            android:id="@+id/item1"
+            android:icon="@drawable/ic_outline_search_30"
+            android:title="Search" />
+    </group>
 
-    <item
-        android:id="@+id/item2"
-        android:title="Screen Rotation" />
+    <group android:id="@+id/group2">
+        <item
+            android:id="@+id/item2"
+            android:icon="@drawable/ic_outline_screen_rotation_30"
+            android:title="Screen Rotation" />
+    </group>
 
-    <item
-        android:id="@+id/item3"
-        android:title="Theme" />
+    <group android:id="@+id/group3">
+        <item
+            android:id="@+id/item3"
+            android:icon="@drawable/ic_outline_light_mode_24"
+            android:title="Theme" />
+    </group>
 
-    <item
-        android:id="@+id/item4"
-        android:title="Language" />
+    <group android:id="@+id/group4">
+        <item
+            android:id="@+id/item4"
+            android:icon="@drawable/ic_outline_language_30"
+            android:title="Language" />
+    </group>
 
-    <item
-        android:id="@+id/item5"
-        android:title="Feedback and Contact" />
+    <group android:id="@+id/group5">
+        <item
+            android:id="@+id/item5"
+            android:icon="@drawable/ic_baseline_feedback_24"
+            android:title="Feedback and Contact" />
+    </group>
 
-    <item
-        android:id="@+id/item6"
-        android:title="Privacy Policy" />
+    <group android:id="@+id/group6">
+        <item
+            android:id="@+id/item6"
+            android:icon="@drawable/ic_baseline_policy_24"
+            android:title="Privacy Policy" />
+    </group>
 
-    <item
-        android:id="@+id/item7"
-        android:title="About" />
+    <group android:id="@+id/group7">
+        <item
+            android:id="@+id/item7"
+            android:icon="@drawable/ic_baseline_info_24"
+            android:title="About" />
+    </group>
 
 </menu>
