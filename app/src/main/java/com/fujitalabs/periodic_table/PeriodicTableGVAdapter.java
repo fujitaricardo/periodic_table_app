@@ -16,10 +16,9 @@ import java.util.ArrayList;
 
 public class PeriodicTableGVAdapter extends ArrayAdapter<ChemicalElement> {
 
-    private FragmentManager fragmentManager;
-    private PeriodTableListener periodTableListener;
+    private ElementSelectedListener periodTableListener;
 
-    public PeriodicTableGVAdapter(@NonNull Context context, ArrayList<ChemicalElement> ChemicalElementList, PeriodTableListener periodTableListener) {
+    public PeriodicTableGVAdapter(@NonNull Context context, ArrayList<ChemicalElement> ChemicalElementList, ElementSelectedListener periodTableListener) {
         super(context, 0, ChemicalElementList);
         this.periodTableListener = periodTableListener;
     }
@@ -27,67 +26,70 @@ public class PeriodicTableGVAdapter extends ArrayAdapter<ChemicalElement> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View listitemView = convertView;
-
-        if (listitemView == null) {
-            listitemView = LayoutInflater.from(getContext()).inflate(R.layout.element_block_layout, parent, false);
-        }
-
         ChemicalElement chemicalElement = getItem(position);
+        View elementView = convertView;
 
-        if (chemicalElement == null) {
-            listitemView.setVisibility(View.GONE);
-            listitemView.setEnabled(false);
-            listitemView.setClickable(false);
-        } else {
-            listitemView.setVisibility(View.VISIBLE);
-            listitemView.setEnabled(true);
-            CardView cvElementCard = listitemView.findViewById(R.id.cv_element_card);
-            TextView tvName = listitemView.findViewById(R.id.tv_name);
-            TextView tvSymbol = listitemView.findViewById(R.id.tv_symbol);
-            TextView tvAtomicNumber = listitemView.findViewById(R.id.tv_atomic_number);
-            TextView tvAtomicWeight = listitemView.findViewById(R.id.tv_atomic_weight);
-
-            cvElementCard.setCardBackgroundColor(parent.getResources().getColor(chemicalElement.getColor()));
-
-            if (chemicalElement.getName().equals("")) {
-                if (chemicalElement.getSymbol().equals("La")) {
-                    tvName.setText("Lanthanoids");
-                    tvSymbol.setText("");
-                    tvAtomicNumber.setText("57-71");
-                    tvAtomicWeight.setText("");
-                } else if (chemicalElement.getSymbol().equals("Ac")) {
-                    tvName.setText("Actinoids");
-                    tvSymbol.setText("");
-                    tvAtomicNumber.setText("89-103");
-                    tvAtomicWeight.setText("");
-                }
-            } else {
-                tvName.setText(chemicalElement.getName());
-                tvSymbol.setText(chemicalElement.getSymbol());
-                tvAtomicNumber.setText(Integer.toString(chemicalElement.getAtomicNumber()));
-                if (chemicalElement.getAtomicWeight() == -1) {
-                    tvAtomicWeight.setText("unknown");
-                } else {
-                    tvAtomicWeight.setText(Float.toString(chemicalElement.getAtomicWeight()));
-                }
-            }
-
-            if (!chemicalElement.getName().isEmpty()) {
-                listitemView.setClickable(true);
-                listitemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        periodTableListener.onElementSelected(position);
-                    }
-                });
-            }
+        if (elementView == null) {
+            elementView = LayoutInflater.from(getContext()).inflate(R.layout.element_block_layout, parent, false);
         }
 
-        return listitemView;
+        CardView cvElementCard = elementView.findViewById(R.id.cv_element_card);
+        TextView tvName = elementView.findViewById(R.id.tv_name);
+        TextView tvSymbol = elementView.findViewById(R.id.tv_symbol);
+        TextView tvAtomicNumber = elementView.findViewById(R.id.tv_atomic_number);
+        TextView tvAtomicWeight = elementView.findViewById(R.id.tv_atomic_weight);
+
+        if (position == 92) {
+            cvElementCard.setCardBackgroundColor(parent.getResources()
+                    .getColor(ChemicalElement.getColorByCategory(ChemicalElement.Category.LANTHANIDES)));
+            tvName.setText("Lanthanides");
+            tvAtomicNumber.setText("57-71");
+            tvSymbol.setText("");
+            tvAtomicWeight.setText("");
+            elementView.setEnabled(true);
+            elementView.setClickable(false);
+            elementView.setVisibility(View.VISIBLE);
+        } else if (position == 110) {
+            cvElementCard.setCardBackgroundColor(parent.getResources()
+                    .getColor(ChemicalElement.getColorByCategory(ChemicalElement.Category.ACTINIDES)));
+            tvName.setText("Actinides");
+            tvAtomicNumber.setText("89-103");
+            tvSymbol.setText("");
+            tvAtomicWeight.setText("");
+            elementView.setEnabled(true);
+            elementView.setClickable(false);
+            elementView.setVisibility(View.VISIBLE);
+        } else if (chemicalElement == null) {
+            elementView.setEnabled(false);
+            elementView.setClickable(false);
+            elementView.setVisibility(View.GONE);
+        } else {
+            cvElementCard.setCardBackgroundColor(parent.getResources().getColor(chemicalElement.getColor()));
+            tvName.setText(chemicalElement.getName());
+            tvSymbol.setText(chemicalElement.getSymbol());
+            tvAtomicNumber.setText(Integer.toString(chemicalElement.getAtomicNumber()));
+            if (chemicalElement.getAtomicWeight() == -1) {
+                tvAtomicWeight.setText("unknown");
+            } else {
+                tvAtomicWeight.setText(Float.toString(chemicalElement.getAtomicWeight()));
+            }
+
+            elementView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    periodTableListener.onElementSelected(chemicalElement);
+                }
+            });
+
+            elementView.setEnabled(true);
+            elementView.setClickable(true);
+            elementView.setVisibility(View.VISIBLE);
+        }
+
+        return elementView;
     }
 
-    public interface PeriodTableListener {
-        public void onElementSelected(int selectedElementIndex);
+    public interface ElementSelectedListener {
+        public void onElementSelected(ChemicalElement selectedElement);
     }
 }

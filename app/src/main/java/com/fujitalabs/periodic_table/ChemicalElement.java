@@ -125,4 +125,8 @@ public class ChemicalElement {
     public Integer getColor() {
         return categoryColor.get(this.category);
     }
+
+    public static Integer getColorByCategory(Category category) {
+        return categoryColor.get(category);
+    }
 }

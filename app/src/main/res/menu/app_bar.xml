@@ -3,24 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/search"
+        android:id="@+id/appbar_search"
         android:icon="@drawable/ic_outline_search_30"
         android:title="Search"
-        android:contentDescription="Search elements by key words"
+        android:contentDescription="Search elements"
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/filter"
+        android:id="@+id/appbar_filter"
         android:icon="@drawable/ic_outline_filter_alt_30"
-        android:title="Filter"
+        android:title="Filter categories"
         android:contentDescription="Filter elements by category"
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/rotate"
+        android:id="@+id/appbar_rotate"
         android:icon="@drawable/ic_outline_screen_rotation_30"
         android:title="Switch screen rotation"
-        android:contentDescription="Switch screen rotation to horizontal"
+        android:contentDescription="Switch screen rotation"
         app:showAsAction="always" />
 
 </menu>
