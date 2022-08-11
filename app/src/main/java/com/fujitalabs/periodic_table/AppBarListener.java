@@ -2,6 +2,8 @@ package com.fujitalabs.periodic_table;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -23,13 +25,11 @@ public class AppBarListener implements Toolbar.OnMenuItemClickListener {
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.appbar_search:
-                Toast.makeText(context, "Search", Toast.LENGTH_SHORT).show();
+                Intent searchActivityIntent = new Intent(context, SearchActivity.class);
+                context.startActivity(searchActivityIntent);
                 break;
             case R.id.appbar_filter:
                 onSetFilterCallback();
-                break;
-            case R.id.appbar_rotate:
-                Toast.makeText(context, "Screen rotation", Toast.LENGTH_SHORT).show();
                 break;
         }
         return false;

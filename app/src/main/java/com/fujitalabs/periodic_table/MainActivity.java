@@ -5,7 +5,6 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.LinearLayout;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -32,6 +31,12 @@ public class MainActivity extends AppCompatActivity {
         setViews();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        bsElementSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
+    }
+
     private void setViews() {
         setContentView(R.layout.activity_main);
         gvPeriodicTable = findViewById(R.id.gv_periodic_table);
@@ -48,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dlMainActivity.openDrawer(Gravity.LEFT);
+                bsElementSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
             }
         });
 

@@ -1,10 +1,10 @@
 package com.fujitalabs.periodic_table;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
@@ -43,7 +43,8 @@ public class PeriodicTableListener implements PeriodicTableGVAdapter.ElementSele
         seeMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "See More", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, ElementDataActivity.class);
+                context.startActivity(intent);
             }
         });
 

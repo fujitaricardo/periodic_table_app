@@ -3,8 +3,8 @@ package com.fujitalabs.periodic_table;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -18,7 +18,6 @@ public class MenuListener implements NavigationView.OnNavigationItemSelectedList
 
     private int selectedTheme;
     private int selectedLanguage;
-    private int selectedScreenRotation;
 
     public MenuListener(Context context) {
         this.context = context;
@@ -29,10 +28,8 @@ public class MenuListener implements NavigationView.OnNavigationItemSelectedList
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_search:
-                Toast.makeText(context, "Search", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.menu_rotation:
-                onSetScreenRotationCallback();
+                Intent searchActivityIntent = new Intent(context, SearchActivity.class);
+                context.startActivity(searchActivityIntent);
                 break;
             case R.id.menu_theme:
                 onSetThemeCallback();
@@ -41,46 +38,19 @@ public class MenuListener implements NavigationView.OnNavigationItemSelectedList
                 onSetLanguageCallback();
                 break;
             case R.id.menu_feedback:
-                Toast.makeText(context, "Feedback", Toast.LENGTH_SHORT).show();
+                Intent feedbackActivityIntent = new Intent(context, FeedbackActivity.class);
+                context.startActivity(feedbackActivityIntent);
                 break;
             case R.id.menu_privacy_policy:
-                Toast.makeText(context, "Privacy policy", Toast.LENGTH_SHORT).show();
+                Intent privacyPolicyActivityIntent = new Intent(context, PrivacyPolicyActivity.class);
+                context.startActivity(privacyPolicyActivityIntent);
                 break;
             case R.id.menu_about:
-                Toast.makeText(context, "About", Toast.LENGTH_SHORT).show();
+                Intent aboutActivityIntent = new Intent(context, AboutActivity.class);
+                context.startActivity(aboutActivityIntent);
                 break;
         }
         return true;
-    }
-
-    private void onSetScreenRotationCallback() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Set screen rotation:");
-
-        builder.setSingleChoiceItems(settings.menuRotationOptions, selectedScreenRotation, new DialogInterface.OnClickListener() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                selectedScreenRotation = which;
-            }
-        });
-
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-
-        builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-
-        AlertDialog customAlertDialog = builder.create();
-        customAlertDialog.show();
     }
 
     private void onSetThemeCallback() {

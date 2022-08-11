@@ -8,13 +8,6 @@
             android:title="Search" />
     </group>
 
-    <group android:id="@+id/group_menu_rotation">
-        <item
-            android:id="@+id/menu_rotation"
-            android:icon="@drawable/ic_outline_screen_rotation_30"
-            android:title="Screen Rotation" />
-    </group>
-
     <group android:id="@+id/group_menu_theme">
         <item
             android:id="@+id/menu_theme"

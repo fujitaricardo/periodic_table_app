@@ -16,11 +16,4 @@
         android:contentDescription="Filter elements by category"
         app:showAsAction="always" />
 
-    <item
-        android:id="@+id/appbar_rotate"
-        android:icon="@drawable/ic_outline_screen_rotation_30"
-        android:title="Switch screen rotation"
-        android:contentDescription="Switch screen rotation"
-        app:showAsAction="always" />
-
 </menu>
