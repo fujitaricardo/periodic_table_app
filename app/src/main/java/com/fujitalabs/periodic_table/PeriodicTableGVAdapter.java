@@ -10,7 +10,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
-import androidx.fragment.app.FragmentManager;
 
 import java.util.ArrayList;
 
@@ -30,7 +29,7 @@ public class PeriodicTableGVAdapter extends ArrayAdapter<ChemicalElement> {
         View elementView = convertView;
 
         if (elementView == null) {
-            elementView = LayoutInflater.from(getContext()).inflate(R.layout.element_block_layout, parent, false);
+            elementView = LayoutInflater.from(getContext()).inflate(R.layout.element_card_layout, parent, false);
         }
 
         CardView cvElementCard = elementView.findViewById(R.id.cv_element_card);
