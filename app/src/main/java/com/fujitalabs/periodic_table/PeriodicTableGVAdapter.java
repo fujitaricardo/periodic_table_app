@@ -90,6 +90,6 @@ public class PeriodicTableGVAdapter extends ArrayAdapter<ChemicalElement> {
     }
 
     public interface ElementSelectedListener {
-        public void onElementSelected(ChemicalElement selectedElement);
+        void onElementSelected(ChemicalElement selectedElement);
     }
 }
