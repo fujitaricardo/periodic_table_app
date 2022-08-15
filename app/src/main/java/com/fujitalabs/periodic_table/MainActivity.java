@@ -11,6 +11,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.navigation.NavigationView;
+import com.otaliastudios.zoom.ZoomLayout;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private MaterialToolbar mtAppBar;
     private BottomSheetBehavior bsElementSheetBehavior;
     private PeriodicTableGVAdapter periodicTableGVAdapter;
+    private ZoomLayout zlPeriodicTableZoom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         bsElementSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
+        zlPeriodicTableZoom.moveTo(4.0f, -1.0f, 1.0f, false);
     }
 
     private void setViews() {
@@ -44,11 +47,12 @@ public class MainActivity extends AppCompatActivity {
         dlMainActivity = findViewById(R.id.dl_main_activity);
         bsElementSheet = findViewById(R.id.ll_bottom_sheet);
         nvMenu = findViewById(R.id.nv_menu);
+        zlPeriodicTableZoom = findViewById(R.id.zl_periodic_table_zoom);
 
         bsElementSheetBehavior = BottomSheetBehavior.from(bsElementSheet);
         bsElementSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
 
-        mtAppBar.setOnMenuItemClickListener(new AppBarListener(this));
+        mtAppBar.setOnMenuItemClickListener(new AppBarListener(this, zlPeriodicTableZoom));
         mtAppBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

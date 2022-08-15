@@ -67,11 +67,6 @@ public class PeriodicTableGVAdapter extends ArrayAdapter<ChemicalElement> {
             tvName.setText(chemicalElement.getName());
             tvSymbol.setText(chemicalElement.getSymbol());
             tvAtomicNumber.setText(Integer.toString(chemicalElement.getAtomicNumber()));
-            if (chemicalElement.getAtomicWeight() == -1) {
-                tvAtomicWeight.setText("unknown");
-            } else {
-                tvAtomicWeight.setText(Float.toString(chemicalElement.getAtomicWeight()));
-            }
 
             elementView.setOnClickListener(new View.OnClickListener() {
                 @Override

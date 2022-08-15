@@ -10,15 +10,19 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
 
+import com.otaliastudios.zoom.ZoomLayout;
+
 public class AppBarListener implements Toolbar.OnMenuItemClickListener {
 
     private Context context;
     private final String[] filterCategories = {"Nonmetals", "Alkali Metals", "Alkaline Earth Metals", "Transition Metals",
             "Post-Transition Metals", "Metalloids", "Lanthanides", "Actinides", "Halogens",  "Noble Gases"};
     private boolean[] filterCheckedItems = {true, true, true, true, true, true, true, true, true, true};
+    private ZoomLayout zoomLayout;
 
-    public AppBarListener(Context context) {
+    public AppBarListener(Context context, ZoomLayout zoomLayout) {
         this.context = context;
+        this.zoomLayout = zoomLayout;
     }
 
     @Override
@@ -30,6 +34,17 @@ public class AppBarListener implements Toolbar.OnMenuItemClickListener {
                 break;
             case R.id.appbar_filter:
                 onSetFilterCallback();
+                break;
+            case R.id.appbar_zoom_out:
+                float zOut = zoomLayout.getZoom();
+                zoomLayout.zoomTo(zOut - 1, true);
+                break;
+            case R.id.appbar_zoom_in:
+                float zIn = zoomLayout.getZoom();
+                zoomLayout.zoomTo(zIn + 1, true);
+                break;
+            case R.id.appbar_fit_screen:
+                zoomLayout.zoomTo(1.0f, true);
                 break;
         }
         return false;

@@ -38,39 +38,50 @@
 
                 </com.google.android.material.appbar.AppBarLayout>
 
-                <HorizontalScrollView
+                <com.otaliastudios.zoom.ZoomLayout
+                    android:id="@+id/zl_periodic_table_zoom"
                     android:layout_width="match_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_below="@id/app_bar_layout">
+                    android:layout_height="match_parent"
+                    android:scrollbars="vertical|horizontal"
+                    android:background="@color/antiquewhite"
+                    app:transformation="centerInside"
+                    app:transformationGravity="center"
+                    app:alignment="center"
+                    app:overScrollHorizontal="true"
+                    app:overScrollVertical="true"
+                    app:overPinchable="true"
+                    app:horizontalPanEnabled="true"
+                    app:verticalPanEnabled="true"
+                    app:zoomEnabled="true"
+                    app:flingEnabled="true"
+                    app:scrollEnabled="true"
+                    app:oneFingerScrollEnabled="true"
+                    app:twoFingersScrollEnabled="true"
+                    app:threeFingersScrollEnabled="true"
+                    app:minZoom="1.0"
+                    app:minZoomType="zoom"
+                    app:maxZoom="7.0"
+                    app:maxZoomType="zoom"
+                    app:animationDuration="180"
+                    app:hasClickableChildren="true">
 
                     <FrameLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="match_parent">
+                        android:layout_width="1935dp"
+                        android:layout_height="1095dp"
+                        android:padding="25dp">
 
-                        <LinearLayout
-                            android:layout_width="1900dp"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                            android:background="@color/antiquewhite" >
-
-                            <GridView
-                                android:id="@+id/gv_periodic_table"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginBottom="10dp"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-                                android:horizontalSpacing="5dp"
-                                android:verticalSpacing="5dp"
-                                android:numColumns="18"
-                                android:stretchMode="columnWidth" />
-
-                        </LinearLayout>
+                        <GridView
+                            android:id="@+id/gv_periodic_table"
+                            android:layout_width="1885dp"
+                            android:layout_height="1045dp"
+                            android:horizontalSpacing="5dp"
+                            android:verticalSpacing="5dp"
+                            android:numColumns="18"
+                            android:stretchMode="columnWidth" />
 
                     </FrameLayout>
 
-                </HorizontalScrollView>
+                </com.otaliastudios.zoom.ZoomLayout>
 
             </LinearLayout>
 
