@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/navajowhite">
+    android:background="@color/primaryBackground">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_layout"
@@ -17,7 +17,6 @@
             android:id="@+id/mt_app_bar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/snow"
             app:navigationIcon="@drawable/ic_baseline_close_24"
             style="@style/Widget.MaterialComponents.Toolbar.Primary" />
 

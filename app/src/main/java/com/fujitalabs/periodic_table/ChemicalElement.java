@@ -30,16 +30,16 @@ public class ChemicalElement {
     private static final Map<Category, Integer> categoryColor;
     static {
         categoryColor = new HashMap<>();
-        categoryColor.put(Category.NONMETALS, R.color.green_pastel);
-        categoryColor.put(Category.ALKALI_METALS, R.color.red_pastel);
-        categoryColor.put(Category.ALKALINE_EARTH_METALS, R.color.brown);
-        categoryColor.put(Category.TRANSITION_METALS, R.color.orange_dark);
-        categoryColor.put(Category.POST_TRANSITION_METALS, R.color.teal_200);
-        categoryColor.put(Category.METALLOIDS, R.color.yellow);
-        categoryColor.put(Category.LANTHANIDES, R.color.pink);
-        categoryColor.put(Category.ACTINIDES, R.color.purple);
-        categoryColor.put(Category.HALOGENS, R.color.blue_pastel);
-        categoryColor.put(Category.NOBLE_GASES, R.color.silver);
+        categoryColor.put(Category.NONMETALS, R.color.nonMetals);
+        categoryColor.put(Category.ALKALI_METALS, R.color.alkaliMetals);
+        categoryColor.put(Category.ALKALINE_EARTH_METALS, R.color.alkalineEarthMetals);
+        categoryColor.put(Category.TRANSITION_METALS, R.color.transitionMetals);
+        categoryColor.put(Category.POST_TRANSITION_METALS, R.color.postTransitionMetals);
+        categoryColor.put(Category.METALLOIDS, R.color.metalloids);
+        categoryColor.put(Category.LANTHANIDES, R.color.lanthanides);
+        categoryColor.put(Category.ACTINIDES, R.color.actinides);
+        categoryColor.put(Category.HALOGENS, R.color.halogens);
+        categoryColor.put(Category.NOBLE_GASES, R.color.nobleGases);
     }
 
     public ChemicalElement(String name, String symbol, int atomicNumber, float atomicWeight, Category category) {

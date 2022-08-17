@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Theme colors -->
-    <color name="primaryColor">#FFDEAD</color>
-    <color name="primaryLightColor">#FFFFDF</color>
-    <color name="primaryDarkColor">#CBAC7D</color>
-    <color name="primaryBackground">#FFFFDF</color>
-    <color name="secondaryColor">#F0CBB1</color>
-    <color name="secondaryLightColor">#FFFEE3</color>
-    <color name="secondaryDarkColor">#BD9A81</color>
-    <color name="primaryTextColor">#000000</color>
-    <color name="secondaryTextColor">#000000</color>
+    <color name="primaryColor">#000000</color>
+    <color name="primaryLightColor">#555555</color>
+    <color name="primaryDarkColor">#151515</color>
+    <color name="primaryBackground">#202020</color>
+    <color name="secondaryColor">#757575</color>
+    <color name="secondaryLightColor">#A0A0A0</color>
+    <color name="secondaryDarkColor">#595959</color>
+    <color name="primaryTextColor">#EAEAEA</color>
+    <color name="secondaryTextColor">#ffffff</color>
 
     <!-- Element colors -->
-    <color name="nonMetals">#61FF69</color>
-    <color name="alkaliMetals">#FF5148</color>
-    <color name="alkalineEarthMetals">#A47551</color>
-    <color name="transitionMetals">#FF8C30</color>
-    <color name="postTransitionMetals">#FF03DAC5</color>
-    <color name="metalloids">#FFFF33</color>
-    <color name="lanthanides">#FD5DBF</color>
-    <color name="actinides">#BB60FD</color>
-    <color name="halogens">#6087FD</color>
-    <color name="nobleGases">#AAAAAA</color>
+    <color name="nonMetals">#0C6005</color>
+    <color name="alkaliMetals">#A0100E</color>
+    <color name="alkalineEarthMetals">#552B16</color>
+    <color name="transitionMetals">#B9590B</color>
+    <color name="postTransitionMetals">#2F776A</color>
+    <color name="metalloids">#7A6A07</color>
+    <color name="lanthanides">#60014F</color>
+    <color name="actinides">#8627C2</color>
+    <color name="halogens">#0A47E2</color>
+    <color name="nobleGases">#585858</color>
 
     <!-- Unused colors -->
     <color name="purple_200">#FFBB86FC</color>

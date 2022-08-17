@@ -31,7 +31,6 @@
                         android:id="@+id/mt_app_bar"
                         android:layout_width="match_parent"
                         android:layout_height="?attr/actionBarSize"
-                        android:background="@color/snow"
                         app:menu="@menu/app_bar"
                         app:navigationIcon="@drawable/ic_baseline_menu_30"
                         style="@style/Widget.MaterialComponents.Toolbar.Primary" />
@@ -43,7 +42,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scrollbars="vertical|horizontal"
-                    android:background="@color/antiquewhite"
+                    android:background="@color/primaryBackground"
                     app:transformation="centerInside"
                     app:transformationGravity="center"
                     app:alignment="center"
@@ -91,7 +90,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="start"
                 app:menu="@menu/navigation_menu"
-                android:background="@color/navajowhite"/>
+                android:background="@color/primaryColor"/>
 
         </androidx.drawerlayout.widget.DrawerLayout>
 

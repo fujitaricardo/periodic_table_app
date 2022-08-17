@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.appbar.MaterialToolbar;
@@ -29,15 +30,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.settings = Settings.getInstance();
+        this.settings = Settings.getInstance(this);
         setViews();
+        setDarkMode();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         bsElementSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
-        zlPeriodicTableZoom.moveTo(4.0f, -1.0f, 1.0f, false);
     }
 
     private void setViews() {
@@ -66,5 +67,13 @@ public class MainActivity extends AppCompatActivity {
         periodicTableGVAdapter = new PeriodicTableGVAdapter(this, settings.getChemicalElements(),
                 new PeriodicTableListener(this, bsElementSheet, bsElementSheetBehavior));
         gvPeriodicTable.setAdapter(periodicTableGVAdapter);
+    }
+
+    private void setDarkMode() {
+        if (settings.isDarkMode()) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
     }
 }

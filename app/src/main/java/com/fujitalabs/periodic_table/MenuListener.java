@@ -8,6 +8,7 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -21,7 +22,7 @@ public class MenuListener implements NavigationView.OnNavigationItemSelectedList
 
     public MenuListener(Context context) {
         this.context = context;
-        settings = Settings.getInstance();
+        settings = Settings.getInstance(context);
     }
 
     @Override
@@ -54,6 +55,7 @@ public class MenuListener implements NavigationView.OnNavigationItemSelectedList
     }
 
     private void onSetThemeCallback() {
+        selectedTheme = settings.isDarkMode() ? 1 : 0;
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
         alertDialog.setTitle("Set theme:");
 
@@ -75,6 +77,15 @@ public class MenuListener implements NavigationView.OnNavigationItemSelectedList
         alertDialog.setPositiveButton("Save", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                boolean isDarkMode = selectedTheme == 1;
+                settings.setDarkMode(isDarkMode);
+
+                if (isDarkMode) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                }
+
                 dialog.dismiss();
             }
         });
@@ -84,6 +95,7 @@ public class MenuListener implements NavigationView.OnNavigationItemSelectedList
     }
 
     private void onSetLanguageCallback() {
+        selectedLanguage = settings.getSelectedLanguage();
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
         alertDialog.setTitle("Set language:");
 
@@ -105,6 +117,7 @@ public class MenuListener implements NavigationView.OnNavigationItemSelectedList
         alertDialog.setPositiveButton("Save", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                settings.setSelectedLanguage(selectedLanguage);
                 dialog.dismiss();
             }
         });

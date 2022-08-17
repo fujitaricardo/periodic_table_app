@@ -14,7 +14,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/navajowhite">
+        android:background="@color/primaryColor">
 
         <FrameLayout
             android:id="@+id/fl_upper_frame"
@@ -28,7 +28,7 @@
             android:src="@drawable/ic_baseline_drag_handle_24"
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:background="@color/snow"
+            android:background="@color/primaryDarkColor"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -41,7 +41,7 @@
             app:layout_constraintTop_toBottomOf="@id/iv_slider"
             android:layout_marginTop="15dp"
             android:layout_marginLeft="20dp"
-            android:background="@color/gray"/>
+            android:background="@color/primaryBackground"/>
 
         <TextView
             android:id="@+id/tv_name_label"
@@ -50,6 +50,7 @@
             android:textStyle="bold"
             android:textSize="15sp"
             android:text="Name:"
+            android:textColor="@color/primaryTextColor"
             app:layout_constraintTop_toTopOf="@id/iv_element_card"
             app:layout_constraintLeft_toRightOf="@id/iv_element_card"
             android:layout_marginLeft="15dp"/>
@@ -61,6 +62,7 @@
             android:textStyle="bold"
             android:textSize="15sp"
             android:text="Symbol:"
+            android:textColor="@color/primaryTextColor"
             app:layout_constraintTop_toBottomOf="@id/tv_name_label"
             app:layout_constraintLeft_toLeftOf="@id/tv_name_label"
             android:layout_marginTop="5dp"/>
@@ -72,6 +74,7 @@
             android:textStyle="bold"
             android:textSize="15sp"
             android:text="Atomic Number:"
+            android:textColor="@color/primaryTextColor"
             app:layout_constraintTop_toBottomOf="@id/tv_symbol_label"
             app:layout_constraintLeft_toLeftOf="@id/tv_symbol_label"
             android:layout_marginTop="5dp"/>
@@ -83,6 +86,7 @@
             android:textStyle="bold"
             android:textSize="15sp"
             android:text="Atomic Weight:"
+            android:textColor="@color/primaryTextColor"
             app:layout_constraintTop_toBottomOf="@id/tv_atomic_number_label"
             app:layout_constraintLeft_toLeftOf="@id/tv_atomic_number_label"
             android:layout_marginTop="5dp"/>
@@ -93,6 +97,7 @@
             android:layout_height="wrap_content"
             android:textSize="15sp"
             android:text="Hydrogen"
+            android:textColor="@color/primaryTextColor"
             app:layout_constraintTop_toTopOf="@id/tv_name_label"
             app:layout_constraintLeft_toRightOf="@id/tv_name_label"
             android:layout_marginLeft="4dp"/>
@@ -103,6 +108,7 @@
             android:layout_height="wrap_content"
             android:textSize="15sp"
             android:text="H"
+            android:textColor="@color/primaryTextColor"
             app:layout_constraintTop_toTopOf="@id/tv_symbol_label"
             app:layout_constraintLeft_toRightOf="@id/tv_symbol_label"
             android:layout_marginLeft="4dp"/>
@@ -113,6 +119,7 @@
             android:layout_height="wrap_content"
             android:textSize="15sp"
             android:text="1"
+            android:textColor="@color/primaryTextColor"
             app:layout_constraintTop_toTopOf="@id/tv_atomic_number_label"
             app:layout_constraintLeft_toRightOf="@id/tv_atomic_number_label"
             android:layout_marginLeft="4dp"/>
@@ -123,41 +130,35 @@
             android:layout_height="wrap_content"
             android:textSize="15sp"
             android:text="1.008"
+            android:textColor="@color/primaryTextColor"
             app:layout_constraintTop_toTopOf="@id/tv_atomic_weight_label"
             app:layout_constraintLeft_toRightOf="@id/tv_atomic_weight_label"
             android:layout_marginLeft="4dp"/>
 
-        <LinearLayout
-            android:id="@+id/fl_downer_frame"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/navajowhite"
-            android:orientation="vertical"
+            android:justificationMode="inter_word"
+            app:layout_constraintTop_toBottomOf="@id/fl_upper_frame"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fl_upper_frame">
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/primaryTextColor"
+            android:text="@string/lorem_ipsum"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:justificationMode="inter_word"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/lorem_ipsum"/>
-
-            <TextView
-                android:id="@+id/tv_see_more"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"
-                android:textStyle="bold"
-                android:textSize="15sp"
-                android:text="SEE MORE"
-                android:layout_gravity="right"/>
-
-        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_see_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="25dp"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:text="SEE MORE"
+            android:textColor="@color/secondaryTextColor"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -79,7 +79,7 @@ public class SettingsUtils {
         chemicalElements.add(new ChemicalElement("Iridium", "Ir", 77, 192.217f, ChemicalElement.Category.TRANSITION_METALS));
         chemicalElements.add(new ChemicalElement("Platinum", "Pt", 78, 195.085f, ChemicalElement.Category.TRANSITION_METALS));
         chemicalElements.add(new ChemicalElement("Gold", "Au", 79, 196.967f, ChemicalElement.Category.TRANSITION_METALS));
-        chemicalElements.add(new ChemicalElement("Mercuiry", "Hg", 80, 200.592f, ChemicalElement.Category.TRANSITION_METALS));
+        chemicalElements.add(new ChemicalElement("Mercury", "Hg", 80, 200.592f, ChemicalElement.Category.TRANSITION_METALS));
         chemicalElements.add(new ChemicalElement("Thallium", "Tl", 81, 204.383f, ChemicalElement.Category.POST_TRANSITION_METALS));
         chemicalElements.add(new ChemicalElement("Lead", "Pb", 82, 207.2f, ChemicalElement.Category.POST_TRANSITION_METALS));
         chemicalElements.add(new ChemicalElement("Bismuth", "Bi", 83, 208.980f, ChemicalElement.Category.POST_TRANSITION_METALS));

@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toStartOf="@id/gl_horizontal_atomic_number"
             app:layout_constraintTop_toBottomOf="@id/gl_vertical_atomic_number"
-            android:textColor="@color/black"
+            android:textColor="@color/primaryTextColor"
             android:text="1"
             android:textSize="14dp"/>
 
@@ -51,7 +51,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/gl_symbol"
-            android:textColor="@color/black"
+            android:textColor="@color/primaryTextColor"
             android:text="H"
             android:textSize="50dp"
             android:textStyle="bold"/>
@@ -71,7 +71,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/gl_name"
-            android:textColor="@color/black"
+            android:textColor="@color/primaryTextColor"
             android:text="Hydrogen"
             android:textSize="12dp"
             android:textStyle="bold"/>
@@ -91,7 +91,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/gl_atomic_weight"
-            android:textColor="@color/black"
+            android:textColor="@color/primaryTextColor"
             android:text="1.008"
             android:textSize="12dp"
             android:visibility="gone"/>
