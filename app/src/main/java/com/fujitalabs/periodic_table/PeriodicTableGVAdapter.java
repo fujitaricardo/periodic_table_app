@@ -1,9 +1,11 @@
 package com.fujitalabs.periodic_table;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
@@ -71,7 +73,17 @@ public class PeriodicTableGVAdapter extends ArrayAdapter<ChemicalElement> {
             elementView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    v.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.on_click));
                     periodTableListener.onElementSelected(chemicalElement);
+                }
+            });
+
+            elementView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    Intent intent = new Intent(getContext(), ElementDataActivity.class);
+                    getContext().startActivity(intent);
+                    return false;
                 }
             });
 

@@ -5,6 +5,7 @@
     android:id="@+id/cv_element_card"
     android:layout_width="100dp"
     android:layout_height="100dp"
+    android:foreground="?android:attr/selectableItemBackground"
     app:cardCornerRadius="20dp"
     app:cardElevation="5dp">
 
