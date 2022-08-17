@@ -33,7 +33,8 @@ public class AppBarListener implements Toolbar.OnMenuItemClickListener {
                 context.startActivity(searchActivityIntent);
                 break;
             case R.id.appbar_filter:
-                onSetFilterCallback();
+                Intent filterActivityIntent = new Intent(context, FilterActivity.class);
+                context.startActivity(filterActivityIntent);
                 break;
             case R.id.appbar_zoom_out:
                 float zOut = zoomLayout.getZoom();
@@ -48,34 +49,5 @@ public class AppBarListener implements Toolbar.OnMenuItemClickListener {
                 break;
         }
         return false;
-    }
-
-    private void onSetFilterCallback() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Select categories:");
-
-        builder.setMultiChoiceItems(filterCategories, filterCheckedItems, new DialogInterface.OnMultiChoiceClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-                filterCheckedItems[which] = isChecked;
-            }
-        });
-
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
     }
 }

@@ -22,6 +22,7 @@
     <color name="actinides">#8627C2</color>
     <color name="halogens">#0A47E2</color>
     <color name="nobleGases">#585858</color>
+    <color name="unselected">@color/transparent</color>
 
     <!-- Unused colors -->
     <color name="purple_200">#FFBB86FC</color>

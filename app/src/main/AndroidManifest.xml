@@ -59,6 +59,13 @@
                 android:value=".MainActivity" />
         </activity>
 
+        <activity
+            android:name=".FilterActivity"
+            android:parentActivityName=".FilterActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
 
     </application>
 

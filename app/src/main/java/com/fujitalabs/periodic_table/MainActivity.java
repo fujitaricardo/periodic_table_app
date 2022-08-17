@@ -16,7 +16,7 @@ import com.otaliastudios.zoom.ZoomLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Settings settings;
+    private static Settings settings;
 
     private GridView gvPeriodicTable;
     private LinearLayout bsElementSheet;
@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         bsElementSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
+        gvPeriodicTable.invalidateViews();
     }
 
     private void setViews() {
@@ -75,5 +76,9 @@ public class MainActivity extends AppCompatActivity {
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
+    }
+
+    public static Settings getSettings() {
+        return settings;
     }
 }

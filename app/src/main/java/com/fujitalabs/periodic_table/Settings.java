@@ -20,9 +20,19 @@ public class Settings {
     private String isHorizontalOrientationKey = "is_horizontal_orientation";
     private String selectedCategoriesKey = "selected_categories";
     private boolean isDarkMode;
-    private boolean isHorizontalOrientation;
     private int selectedLanguage;
-    private boolean[] selectedCategories;
+
+    // filter
+    boolean isNonMetalsChecked = true;
+    boolean isAlkaliMetalsCheck = true;
+    boolean isAlkalineEarthMetalsChecked = true;
+    boolean isTransitionMetalsChecked = true;
+    boolean isPostTransitionMetalsChecked = true;
+    boolean isMetalloidsChecked = true;
+    boolean isLanthanidesChecked = true;
+    boolean isActinidesChecked = true;
+    boolean isHalogensChecked = true;
+    boolean isNobleGasesChecked = true;
 
     private ArrayList<ChemicalElement> chemicalElements;
 
@@ -41,7 +51,6 @@ public class Settings {
 
     private void retrieveDataFromSharedPrefs() {
         this.isDarkMode = sharedPreferences.getBoolean(isDarkModeKey, false);
-        this.isHorizontalOrientation = sharedPreferences.getBoolean(isHorizontalOrientationKey, false);
         this.selectedLanguage = sharedPreferences.getInt(selectedLanguageKey, 0);
     }
 
@@ -71,22 +80,83 @@ public class Settings {
         editor.apply();
     }
 
-    public synchronized boolean isHorizontalOrientation() {
-        return isHorizontalOrientation;
+    public boolean isNonMetalsChecked() {
+        return isNonMetalsChecked;
     }
 
-    public synchronized void setHorizontalOrientation(boolean isHorizontalOrientation) {
-        this.isHorizontalOrientation = isHorizontalOrientation;
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putBoolean(isHorizontalOrientationKey, isHorizontalOrientation);
-        editor.apply();
+    public void setNonMetalsChecked(boolean nonMetalsChecked) {
+        isNonMetalsChecked = nonMetalsChecked;
     }
 
-    public synchronized boolean[] getSelectedCategories() {
-        return selectedCategories;
+    public boolean isAlkaliMetalsCheck() {
+        return isAlkaliMetalsCheck;
     }
 
-    public synchronized void setSelectedCategories(boolean[] selectedCategories) {
-        this.selectedCategories = selectedCategories;
+    public void setAlkaliMetalsCheck(boolean alkaliMetalsCheck) {
+        isAlkaliMetalsCheck = alkaliMetalsCheck;
+    }
+
+    public boolean isAlkalineEarthMetalsChecked() {
+        return isAlkalineEarthMetalsChecked;
+    }
+
+    public void setAlkalineEarthMetalsChecked(boolean alkalineEarthMetalsChecked) {
+        isAlkalineEarthMetalsChecked = alkalineEarthMetalsChecked;
+    }
+
+    public boolean isTransitionMetalsChecked() {
+        return isTransitionMetalsChecked;
+    }
+
+    public void setTransitionMetalsChecked(boolean transitionMetalsChecked) {
+        isTransitionMetalsChecked = transitionMetalsChecked;
+    }
+
+    public boolean isPostTransitionMetalsChecked() {
+        return isPostTransitionMetalsChecked;
+    }
+
+    public void setPostTransitionMetalsChecked(boolean postTransitionMetalsChecked) {
+        isPostTransitionMetalsChecked = postTransitionMetalsChecked;
+    }
+
+    public boolean isMetalloidsChecked() {
+        return isMetalloidsChecked;
+    }
+
+    public void setMetalloidsChecked(boolean metalloidsChecked) {
+        isMetalloidsChecked = metalloidsChecked;
+    }
+
+    public boolean isLanthanidesChecked() {
+        return isLanthanidesChecked;
+    }
+
+    public void setLanthanidesChecked(boolean lanthanidesChecked) {
+        isLanthanidesChecked = lanthanidesChecked;
+    }
+
+    public boolean isActinidesChecked() {
+        return isActinidesChecked;
+    }
+
+    public void setActinidesChecked(boolean actinidesChecked) {
+        isActinidesChecked = actinidesChecked;
+    }
+
+    public boolean isHalogensChecked() {
+        return isHalogensChecked;
+    }
+
+    public void setHalogensChecked(boolean halogensChecked) {
+        isHalogensChecked = halogensChecked;
+    }
+
+    public boolean isNobleGasesChecked() {
+        return isNobleGasesChecked;
+    }
+
+    public void setNobleGasesChecked(boolean nobleGasesChecked) {
+        isNobleGasesChecked = nobleGasesChecked;
     }
 }
