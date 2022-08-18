@@ -17,8 +17,6 @@ public class Settings {
     private String settings = "settings";
     private String isDarkModeKey = "is_dark_mode";
     private String selectedLanguageKey = "selected_language";
-    private String isHorizontalOrientationKey = "is_horizontal_orientation";
-    private String selectedCategoriesKey = "selected_categories";
     private boolean isDarkMode;
     private int selectedLanguage;
 
