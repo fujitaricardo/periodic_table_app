@@ -1,284 +1,277 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
     android:background="@color/primaryBackground">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/mt_app_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_baseline_close_24"
+        style="@style/Widget.MaterialComponents.Toolbar.Primary" />
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/app_bar_layout"
+    <FrameLayout
+        android:id="@+id/fl_filters"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/mt_app_bar"
+        app:layout_constraintBottom_toTopOf="@id/fl_bottom_buttons"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <ScrollView
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="match_parent"
+            android:background="@color/primaryBackground"
+            android:fadeScrollbars="false">
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/mt_app_bar"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:navigationIcon="@drawable/ic_baseline_close_24"
-                style="@style/Widget.MaterialComponents.Toolbar.Primary" />
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
+                android:paddingBottom="25dp">
 
-        </com.google.android.material.appbar.AppBarLayout>
+                <CheckBox
+                    android:id="@+id/cb_non_metals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginLeft="40dp"
+                    android:text="Non Metals"
+                    tools:ignore="NotSibling" />
 
-        <CheckBox
-            android:id="@+id/cb_non_metals"
+                <CheckBox
+                    android:id="@+id/cb_alkali_metals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="@id/cb_non_metals"
+                    app:layout_constraintTop_toBottomOf="@id/cb_non_metals"
+                    android:text="Alkali Metals"/>
+
+                <CheckBox
+                    android:id="@+id/cb_alkaline_earth_metals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="@id/cb_non_metals"
+                    app:layout_constraintTop_toBottomOf="@id/cb_alkali_metals"
+                    android:text="Alkaline Earth Metals"/>
+
+                <CheckBox
+                    android:id="@+id/cb_transition_metals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="@id/cb_non_metals"
+                    app:layout_constraintTop_toBottomOf="@id/cb_alkaline_earth_metals"
+                    android:text="Transition Metals"/>
+
+                <CheckBox
+                    android:id="@+id/cb_post_transition_metals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="@id/cb_non_metals"
+                    app:layout_constraintTop_toBottomOf="@id/cb_transition_metals"
+                    android:text="Post-Transition Metals"/>
+
+                <CheckBox
+                    android:id="@+id/cb_metalloids"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="@id/cb_non_metals"
+                    app:layout_constraintTop_toBottomOf="@id/cb_post_transition_metals"
+                    android:text="Metalloids"/>
+
+                <CheckBox
+                    android:id="@+id/cb_lanthanides"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="@id/cb_non_metals"
+                    app:layout_constraintTop_toBottomOf="@id/cb_metalloids"
+                    android:text="Lanthanides"/>
+
+                <CheckBox
+                    android:id="@+id/cb_actinides"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="@id/cb_non_metals"
+                    app:layout_constraintTop_toBottomOf="@id/cb_lanthanides"
+                    android:text="Actinides"/>
+
+                <CheckBox
+                    android:id="@+id/cb_halogens"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="@id/cb_non_metals"
+                    app:layout_constraintTop_toBottomOf="@id/cb_actinides"
+                    android:text="Halogens"/>
+
+                <CheckBox
+                    android:id="@+id/cb_noble_gases"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="@id/cb_non_metals"
+                    app:layout_constraintTop_toBottomOf="@id/cb_halogens"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="Noble Gases"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/cb_non_metals"
+                    app:layout_constraintTop_toTopOf="@id/cb_non_metals"
+                    app:layout_constraintBottom_toBottomOf="@id/cb_non_metals"
+                    app:cardCornerRadius="5dp"
+                    app:cardBackgroundColor="@color/nonMetals"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/cb_alkali_metals"
+                    app:layout_constraintTop_toTopOf="@id/cb_alkali_metals"
+                    app:layout_constraintBottom_toBottomOf="@id/cb_alkali_metals"
+                    app:cardCornerRadius="5dp"
+                    app:cardBackgroundColor="@color/alkaliMetals"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/cb_alkaline_earth_metals"
+                    app:layout_constraintTop_toTopOf="@id/cb_alkaline_earth_metals"
+                    app:layout_constraintBottom_toBottomOf="@id/cb_alkaline_earth_metals"
+                    app:cardCornerRadius="5dp"
+                    app:cardBackgroundColor="@color/alkalineEarthMetals"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/cb_transition_metals"
+                    app:layout_constraintTop_toTopOf="@id/cb_transition_metals"
+                    app:layout_constraintBottom_toBottomOf="@id/cb_transition_metals"
+                    app:cardCornerRadius="5dp"
+                    app:cardBackgroundColor="@color/transitionMetals"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/cb_post_transition_metals"
+                    app:layout_constraintTop_toTopOf="@id/cb_post_transition_metals"
+                    app:layout_constraintBottom_toBottomOf="@id/cb_post_transition_metals"
+                    app:cardCornerRadius="5dp"
+                    app:cardBackgroundColor="@color/postTransitionMetals"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/cb_metalloids"
+                    app:layout_constraintTop_toTopOf="@id/cb_metalloids"
+                    app:layout_constraintBottom_toBottomOf="@id/cb_metalloids"
+                    app:cardCornerRadius="5dp"
+                    app:cardBackgroundColor="@color/metalloids"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/cb_lanthanides"
+                    app:layout_constraintTop_toTopOf="@id/cb_lanthanides"
+                    app:layout_constraintBottom_toBottomOf="@id/cb_lanthanides"
+                    app:cardCornerRadius="5dp"
+                    app:cardBackgroundColor="@color/lanthanides"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/cb_actinides"
+                    app:layout_constraintTop_toTopOf="@id/cb_actinides"
+                    app:layout_constraintBottom_toBottomOf="@id/cb_actinides"
+                    app:cardCornerRadius="5dp"
+                    app:cardBackgroundColor="@color/actinides"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/cb_halogens"
+                    app:layout_constraintTop_toTopOf="@id/cb_halogens"
+                    app:layout_constraintBottom_toBottomOf="@id/cb_halogens"
+                    app:cardCornerRadius="5dp"
+                    app:cardBackgroundColor="@color/halogens"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/cb_noble_gases"
+                    app:layout_constraintTop_toTopOf="@id/cb_noble_gases"
+                    app:layout_constraintBottom_toBottomOf="@id/cb_noble_gases"
+                    app:cardCornerRadius="5dp"
+                    app:cardBackgroundColor="@color/nobleGases"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fl_bottom_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@color/primaryColor">
+
+        <TextView
+            android:id="@+id/tv_clear_filters"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:foreground="?android:attr/selectableItemBackground"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/app_bar_layout"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="40dp"
-            android:text="Non Metals"/>
-
-        <CheckBox
-            android:id="@+id/cb_alkali_metals"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            app:layout_constraintLeft_toLeftOf="@id/cb_non_metals"
-            app:layout_constraintTop_toBottomOf="@id/cb_non_metals"
-            android:text="Alkali Metals"/>
-
-        <CheckBox
-            android:id="@+id/cb_alkaline_earth_metals"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            app:layout_constraintLeft_toLeftOf="@id/cb_non_metals"
-            app:layout_constraintTop_toBottomOf="@id/cb_alkali_metals"
-            android:text="Alkaline Earth Metals"/>
-
-        <CheckBox
-            android:id="@+id/cb_transition_metals"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            app:layout_constraintLeft_toLeftOf="@id/cb_non_metals"
-            app:layout_constraintTop_toBottomOf="@id/cb_alkaline_earth_metals"
-            android:text="Transition Metals"/>
-
-        <CheckBox
-            android:id="@+id/cb_post_transition_metals"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            app:layout_constraintLeft_toLeftOf="@id/cb_non_metals"
-            app:layout_constraintTop_toBottomOf="@id/cb_transition_metals"
-            android:text="Post-Transition Metals"/>
-
-        <CheckBox
-            android:id="@+id/cb_metalloids"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            app:layout_constraintLeft_toLeftOf="@id/cb_non_metals"
-            app:layout_constraintTop_toBottomOf="@id/cb_post_transition_metals"
-            android:text="Metalloids"/>
-
-        <CheckBox
-            android:id="@+id/cb_lanthanides"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            app:layout_constraintLeft_toLeftOf="@id/cb_non_metals"
-            app:layout_constraintTop_toBottomOf="@id/cb_metalloids"
-            android:text="Lanthanides"/>
-
-        <CheckBox
-            android:id="@+id/cb_actinides"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            app:layout_constraintLeft_toLeftOf="@id/cb_non_metals"
-            app:layout_constraintTop_toBottomOf="@id/cb_lanthanides"
-            android:text="Actinides"/>
-
-        <CheckBox
-            android:id="@+id/cb_halogens"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            app:layout_constraintLeft_toLeftOf="@id/cb_non_metals"
-            app:layout_constraintTop_toBottomOf="@id/cb_actinides"
-            android:text="Halogens"/>
-
-        <CheckBox
-            android:id="@+id/cb_noble_gases"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            app:layout_constraintLeft_toLeftOf="@id/cb_non_metals"
-            app:layout_constraintTop_toBottomOf="@id/cb_halogens"
-            android:text="Noble Gases"/>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="10dp"
-            app:layout_constraintLeft_toRightOf="@id/cb_non_metals"
-            app:layout_constraintTop_toTopOf="@id/cb_non_metals"
-            app:layout_constraintBottom_toBottomOf="@id/cb_non_metals"
-            app:cardCornerRadius="5dp"
-            app:cardBackgroundColor="@color/nonMetals"/>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="10dp"
-            app:layout_constraintLeft_toRightOf="@id/cb_alkali_metals"
-            app:layout_constraintTop_toTopOf="@id/cb_alkali_metals"
-            app:layout_constraintBottom_toBottomOf="@id/cb_alkali_metals"
-            app:cardCornerRadius="5dp"
-            app:cardBackgroundColor="@color/alkaliMetals"/>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="10dp"
-            app:layout_constraintLeft_toRightOf="@id/cb_alkaline_earth_metals"
-            app:layout_constraintTop_toTopOf="@id/cb_alkaline_earth_metals"
-            app:layout_constraintBottom_toBottomOf="@id/cb_alkaline_earth_metals"
-            app:cardCornerRadius="5dp"
-            app:cardBackgroundColor="@color/alkalineEarthMetals"/>
-
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="10dp"
-            app:layout_constraintLeft_toRightOf="@id/cb_transition_metals"
-            app:layout_constraintTop_toTopOf="@id/cb_transition_metals"
-            app:layout_constraintBottom_toBottomOf="@id/cb_transition_metals"
-            app:cardCornerRadius="5dp"
-            app:cardBackgroundColor="@color/transitionMetals"/>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="10dp"
-            app:layout_constraintLeft_toRightOf="@id/cb_post_transition_metals"
-            app:layout_constraintTop_toTopOf="@id/cb_post_transition_metals"
-            app:layout_constraintBottom_toBottomOf="@id/cb_post_transition_metals"
-            app:cardCornerRadius="5dp"
-            app:cardBackgroundColor="@color/postTransitionMetals"/>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="10dp"
-            app:layout_constraintLeft_toRightOf="@id/cb_metalloids"
-            app:layout_constraintTop_toTopOf="@id/cb_metalloids"
-            app:layout_constraintBottom_toBottomOf="@id/cb_metalloids"
-            app:cardCornerRadius="5dp"
-            app:cardBackgroundColor="@color/metalloids"/>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="10dp"
-            app:layout_constraintLeft_toRightOf="@id/cb_lanthanides"
-            app:layout_constraintTop_toTopOf="@id/cb_lanthanides"
-            app:layout_constraintBottom_toBottomOf="@id/cb_lanthanides"
-            app:cardCornerRadius="5dp"
-            app:cardBackgroundColor="@color/lanthanides"/>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="10dp"
-            app:layout_constraintLeft_toRightOf="@id/cb_actinides"
-            app:layout_constraintTop_toTopOf="@id/cb_actinides"
-            app:layout_constraintBottom_toBottomOf="@id/cb_actinides"
-            app:cardCornerRadius="5dp"
-            app:cardBackgroundColor="@color/actinides"/>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="10dp"
-            app:layout_constraintLeft_toRightOf="@id/cb_halogens"
-            app:layout_constraintTop_toTopOf="@id/cb_halogens"
-            app:layout_constraintBottom_toBottomOf="@id/cb_halogens"
-            app:cardCornerRadius="5dp"
-            app:cardBackgroundColor="@color/halogens"/>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_marginLeft="10dp"
-            app:layout_constraintLeft_toRightOf="@id/cb_noble_gases"
-            app:layout_constraintTop_toTopOf="@id/cb_noble_gases"
-            app:layout_constraintBottom_toBottomOf="@id/cb_noble_gases"
-            app:cardCornerRadius="5dp"
-            app:cardBackgroundColor="@color/nobleGases"/>
-
-        <TextView
-            android:id="@+id/tv_select_all"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:layout_constraintTop_toBottomOf="@id/cb_noble_gases"
-            app:layout_constraintLeft_toLeftOf="@id/cb_non_metals"
-            android:layout_marginTop="20dp"
-            android:text="SELECT ALL"
-            android:textStyle="bold"
-            android:textSize="14dp"
-            android:clickable="true"/>
-
-        <TextView
-            android:id="@+id/tv_remove_all"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:layout_constraintTop_toBottomOf="@id/tv_select_all"
-            app:layout_constraintLeft_toLeftOf="@id/cb_non_metals"
-            android:layout_marginTop="20dp"
-            android:text="REMOVE ALL"
-            android:textStyle="bold"
-            android:textSize="14dp"
-            android:clickable="true"/>
-
-        <TextView
-            android:id="@+id/tv_save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:layout_constraintTop_toBottomOf="@id/tv_remove_all"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="20dp"
             android:layout_marginTop="20dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginBottom="30dp"
-            android:text="SAVE"
+            android:gravity="left"
+            android:text="CLEAR FILTERS"
             android:textStyle="bold"
             android:textColor="@color/primaryTextColor"
-            android:textSize="14dp"
+            android:textSize="18dp"
             android:clickable="true"/>
 
+
         <TextView
-            android:id="@+id/tv_cancel"
+            android:id="@+id/tv_apply"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:foreground="?android:attr/selectableItemBackground"
-            app:layout_constraintTop_toTopOf="@id/tv_save"
-            app:layout_constraintRight_toLeftOf="@id/tv_save"
-            android:layout_marginRight="25dp"
-            android:text="CANCEL"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:gravity="right"
+            android:text="APPLY"
             android:textStyle="bold"
             android:textColor="@color/primaryTextColor"
-            android:textSize="14dp"
+            android:textSize="18dp"
             android:clickable="true"/>
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

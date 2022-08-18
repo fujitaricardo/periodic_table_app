@@ -23,10 +23,8 @@ public class FilterActivity extends AppCompatActivity {
     private CheckBox cbActinides;
     private CheckBox cbHalogens;
     private CheckBox cbNobleGases;
-    private TextView tvSelectAll;
-    private TextView tvRemoveAll;
-    private TextView tvSave;
-    private TextView tvCancel;
+    private TextView tvClearFilters;
+    private TextView tvApply;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +37,7 @@ public class FilterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_filter);
 
         mtAppBar = findViewById(R.id.mt_app_bar);
-        mtAppBar.setTitle("Filter");
+        mtAppBar.setTitle("Select Filters");
         mtAppBar.setTitleCentered(true);
         mtAppBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,11 +56,42 @@ public class FilterActivity extends AppCompatActivity {
         cbActinides = findViewById(R.id.cb_actinides);
         cbHalogens = findViewById(R.id.cb_halogens);
         cbNobleGases = findViewById(R.id.cb_noble_gases);
-        tvSelectAll = findViewById(R.id.tv_select_all);
-        tvRemoveAll = findViewById(R.id.tv_remove_all);
-        tvSave = findViewById(R.id.tv_save);
-        tvCancel = findViewById(R.id.tv_cancel);
+        tvClearFilters = findViewById(R.id.tv_clear_filters);
+        tvApply = findViewById(R.id.tv_apply);
 
+        tvClearFilters.setClickable(true);
+        tvClearFilters.setEnabled(true);
+        tvClearFilters.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                settings.setFilterOn(false);
+                clearAllFilters();
+                onBackPressed();
+            }
+        });
+
+        tvApply.setClickable(true);
+        tvApply.setEnabled(true);
+        tvApply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (isAnyFilterSelected()) {
+                    settings.setFilterOn(true);
+                    applyFilters();
+                } else {
+                    settings.setFilterOn(false);
+                    clearAllFilters();
+                }
+                onBackPressed();
+            }
+        });
+
+        if (settings.isFilterOn()) {
+            setFilters();
+        }
+    }
+
+    private void setFilters() {
         cbNonMetals.setChecked(settings.isNonMetalsChecked());
         cbAlkaliMetals.setChecked(settings.isAlkaliMetalsCheck());
         cbAlkalineEarthMetals.setChecked(settings.isAlkalineEarthMetalsChecked());
@@ -73,59 +102,9 @@ public class FilterActivity extends AppCompatActivity {
         cbActinides.setChecked(settings.isActinidesChecked());
         cbHalogens.setChecked(settings.isHalogensChecked());
         cbNobleGases.setChecked(settings.isNobleGasesChecked());
-
-        tvSelectAll.setClickable(true);
-        tvSelectAll.setEnabled(true);
-        tvSelectAll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setAll(true);
-            }
-        });
-
-        tvRemoveAll.setClickable(true);
-        tvRemoveAll.setEnabled(true);
-        tvRemoveAll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setAll(false);
-            }
-        });
-
-        tvCancel.setClickable(true);
-        tvCancel.setEnabled(true);
-        tvCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
-
-        tvSave.setClickable(true);
-        tvSave.setEnabled(true);
-        tvSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                saveFilter();
-                onBackPressed();
-            }
-        });
     }
 
-    private void setAll(boolean isChecked) {
-        cbNonMetals.setChecked(isChecked);
-        cbAlkaliMetals.setChecked(isChecked);
-        cbAlkalineEarthMetals.setChecked(isChecked);
-        cbTransitionMetals.setChecked(isChecked);
-        cbPostTransitionMetals.setChecked(isChecked);
-        cbMetalloids.setChecked(isChecked);
-        cbLanthanides.setChecked(isChecked);
-        cbActinides.setChecked(isChecked);
-        cbHalogens.setChecked(isChecked);
-        cbNobleGases.setChecked(isChecked);
-    }
-
-    private void saveFilter() {
+    private void applyFilters() {
         settings.setNonMetalsChecked(cbNonMetals.isChecked());
         settings.setAlkaliMetalsCheck(cbAlkaliMetals.isChecked());
         settings.setAlkalineEarthMetalsChecked(cbAlkalineEarthMetals.isChecked());
@@ -136,5 +115,24 @@ public class FilterActivity extends AppCompatActivity {
         settings.setActinidesChecked(cbActinides.isChecked());
         settings.setHalogensChecked(cbHalogens.isChecked());
         settings.setNobleGasesChecked(cbNobleGases.isChecked());
+    }
+
+    private void clearAllFilters() {
+        settings.setNonMetalsChecked(true);
+        settings.setAlkaliMetalsCheck(true);
+        settings.setAlkalineEarthMetalsChecked(true);
+        settings.setTransitionMetalsChecked(true);
+        settings.setPostTransitionMetalsChecked(true);
+        settings.setMetalloidsChecked(true);
+        settings.setLanthanidesChecked(true);
+        settings.setActinidesChecked(true);
+        settings.setHalogensChecked(true);
+        settings.setNobleGasesChecked(true);
+    }
+
+    private boolean isAnyFilterSelected() {
+        return cbNonMetals.isChecked() || cbAlkaliMetals.isChecked() || cbAlkalineEarthMetals.isChecked()
+                || cbTransitionMetals.isChecked() || cbPostTransitionMetals.isChecked() || cbMetalloids.isChecked()
+                || cbLanthanides.isChecked() || cbActinides.isChecked() || cbHalogens.isChecked() || cbNobleGases.isChecked();
     }
 }

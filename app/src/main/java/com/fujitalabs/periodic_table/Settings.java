@@ -23,6 +23,7 @@ public class Settings {
     private int selectedLanguage;
 
     // filter
+    boolean isFilterOn = false;
     boolean isNonMetalsChecked = true;
     boolean isAlkaliMetalsCheck = true;
     boolean isAlkalineEarthMetalsChecked = true;
@@ -78,6 +79,14 @@ public class Settings {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(selectedLanguageKey, selectedLanguage);
         editor.apply();
+    }
+
+    public boolean isFilterOn() {
+        return isFilterOn;
+    }
+
+    public void setFilterOn(boolean filterOn) {
+        isFilterOn = filterOn;
     }
 
     public boolean isNonMetalsChecked() {
