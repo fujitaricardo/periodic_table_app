@@ -22,7 +22,7 @@
     <color name="actinides">#BB60FD</color>
     <color name="halogens">#6087FD</color>
     <color name="nobleGases">#AAAAAA</color>
-    <color name="unselected">@color/transparent</color>
+    <color name="unselected">@color/transparent_background</color>
 
     <!-- Unused colors -->
     <color name="purple_200">#FFBB86FC</color>
@@ -49,4 +49,5 @@
     <color name="antiquewhite">#FAEBD7</color>
     <color name="navajowhite">#FFDEAD</color>
     <color name="transparent">#00000000</color>
+    <color name="transparent_background">#F0FFFFDF</color>
 </resources>
