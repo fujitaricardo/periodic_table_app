@@ -42,7 +42,7 @@
                     android:id="@+id/zl_periodic_table_zoom"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scrollbars="vertical|horizontal"
+                    android:scrollbars="none"
                     android:background="@color/transparent"
                     app:transformation="centerInside"
                     app:transformationGravity="center"
