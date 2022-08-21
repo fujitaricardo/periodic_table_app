@@ -21,22 +21,17 @@ public class PeriodicTableListener implements PeriodicTableGVAdapter.ElementSele
     }
 
     @Override
-    public void onElementSelected(ChemicalElement chemicalElement) {
+    public void onElementSelected(Element element) {
         TextView name = bsElementSheet.findViewById(R.id.tv_name);
         TextView symbol = bsElementSheet.findViewById(R.id.tv_symbol);
         TextView atomicNumber = bsElementSheet.findViewById(R.id.tv_atomic_number);
         TextView atomicWeight = bsElementSheet.findViewById(R.id.tv_atomic_weight);
         TextView seeMore = bsElementSheet.findViewById(R.id.tv_see_more);
 
-        name.setText(chemicalElement.getName());
-        symbol.setText(chemicalElement.getSymbol());
-        atomicNumber.setText(Integer.toString(chemicalElement.getAtomicNumber()));
-
-        if (chemicalElement.getAtomicWeight() == -1) {
-            atomicWeight.setText("unknown");
-        } else {
-            atomicWeight.setText(Float.toString(chemicalElement.getAtomicWeight()));
-        }
+        name.setText(element.getName());
+        symbol.setText(element.getSymbol());
+        atomicNumber.setText(Integer.toString(element.getAtomicNumber()));
+        atomicWeight.setText(element.getAtomicWeight());
 
         seeMore.setText("SEE MORE");
         seeMore.setClickable(true);

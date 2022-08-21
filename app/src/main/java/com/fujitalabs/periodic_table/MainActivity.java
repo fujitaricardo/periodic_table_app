@@ -17,6 +17,7 @@ import com.otaliastudios.zoom.ZoomLayout;
 public class MainActivity extends AppCompatActivity {
 
     private static Settings settings;
+    private ElementsDao elementsDao;
 
     private GridView gvPeriodicTable;
     private LinearLayout bsElementSheet;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.settings = Settings.getInstance(this);
+        this.elementsDao = ElementsDatabase.getInstance(this).elementsDao();
         setViews();
         setDarkMode();
     }
@@ -65,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
         nvMenu.setNavigationItemSelectedListener(new MenuListener(this));
 
-        periodicTableGVAdapter = new PeriodicTableGVAdapter(this, settings.getChemicalElements(),
+        periodicTableGVAdapter = new PeriodicTableGVAdapter(this, DataUtils.getPeriodicTableArrayList(elementsDao.getAll()),
                 new PeriodicTableListener(this, bsElementSheet, bsElementSheetBehavior));
         gvPeriodicTable.setAdapter(periodicTableGVAdapter);
     }

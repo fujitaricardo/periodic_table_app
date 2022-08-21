@@ -3,8 +3,6 @@ package com.fujitalabs.periodic_table;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import java.util.ArrayList;
-
 public class Settings {
     private static Settings instance;
 
@@ -33,8 +31,6 @@ public class Settings {
     boolean isHalogensChecked = true;
     boolean isNobleGasesChecked = true;
 
-    private ArrayList<ChemicalElement> chemicalElements;
-
     public static Settings getInstance(Context context) {
         if (instance == null) {
             instance = new Settings(context);
@@ -44,17 +40,12 @@ public class Settings {
 
     private Settings(Context context) {
         this.sharedPreferences = context.getSharedPreferences(settings, Context.MODE_PRIVATE);
-        this.chemicalElements = SettingsUtils.getChemicalElementsList();
         retrieveDataFromSharedPrefs();
     }
 
     private void retrieveDataFromSharedPrefs() {
         this.isDarkMode = sharedPreferences.getBoolean(isDarkModeKey, false);
         this.selectedLanguage = sharedPreferences.getInt(selectedLanguageKey, 0);
-    }
-
-    public ArrayList<ChemicalElement> getChemicalElements() {
-        return chemicalElements;
     }
 
     public synchronized boolean isDarkMode() {
