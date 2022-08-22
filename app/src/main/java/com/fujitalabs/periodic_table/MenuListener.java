@@ -56,10 +56,11 @@ public class MenuListener implements NavigationView.OnNavigationItemSelectedList
 
     private void onSetThemeCallback() {
         selectedTheme = settings.isDarkMode() ? 1 : 0;
+        String[] menuThemeOptions = new String[]{context.getString(R.string.theme_light), context.getString(R.string.theme_dark)};
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
-        alertDialog.setTitle("Set theme:");
+        alertDialog.setTitle(context.getResources().getString(R.string.dialog_set_theme));
 
-        alertDialog.setSingleChoiceItems(settings.menuThemeOptions, selectedTheme, new DialogInterface.OnClickListener() {
+        alertDialog.setSingleChoiceItems(menuThemeOptions, selectedTheme, new DialogInterface.OnClickListener() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -67,14 +68,14 @@ public class MenuListener implements NavigationView.OnNavigationItemSelectedList
             }
         });
 
-        alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        alertDialog.setNegativeButton(context.getResources().getString(R.string.button_cancel), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
             }
         });
 
-        alertDialog.setPositiveButton("Save", new DialogInterface.OnClickListener() {
+        alertDialog.setPositiveButton(context.getResources().getString(R.string.button_save), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 boolean isDarkMode = selectedTheme == 1;
@@ -96,10 +97,11 @@ public class MenuListener implements NavigationView.OnNavigationItemSelectedList
 
     private void onSetLanguageCallback() {
         selectedLanguage = settings.getSelectedLanguage();
+        String[] menuLanguageOptions = new String[]{"English", "Português"};
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
         alertDialog.setTitle("Set language:");
 
-        alertDialog.setSingleChoiceItems(settings.menuLanguageOptions, selectedLanguage, new DialogInterface.OnClickListener() {
+        alertDialog.setSingleChoiceItems(menuLanguageOptions, selectedLanguage, new DialogInterface.OnClickListener() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(DialogInterface dialog, int which) {

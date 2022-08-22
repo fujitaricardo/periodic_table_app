@@ -46,8 +46,8 @@ public class PeriodicTableGVAdapter extends ArrayAdapter<Element> {
 
         if (position == 92) {
             cvElementCard.setCardBackgroundColor(parent.getResources().getColor(getCardColor(Element.CATEGORY_LANTHANIDES)));
-            tvName.setText("Lanthanides");
-            tvAtomicNumber.setText("57-71");
+            tvName.setText(getContext().getString(R.string.category_lanthanides));
+            tvAtomicNumber.setText(getContext().getString(R.string.label_lanthanides_range));
             tvSymbol.setText("");
             tvAtomicWeight.setText("");
             elementView.setEnabled(true);
@@ -55,8 +55,8 @@ public class PeriodicTableGVAdapter extends ArrayAdapter<Element> {
             elementView.setVisibility(View.VISIBLE);
         } else if (position == 110) {
             cvElementCard.setCardBackgroundColor(parent.getResources().getColor(getCardColor(Element.CATEGORY_ACTINIDES)));
-            tvName.setText("Actinides");
-            tvAtomicNumber.setText("89-103");
+            tvName.setText(getContext().getString(R.string.category_actinides));
+            tvAtomicNumber.setText(getContext().getString(R.string.label_actinides_range));
             tvSymbol.setText("");
             tvAtomicWeight.setText("");
             elementView.setEnabled(true);

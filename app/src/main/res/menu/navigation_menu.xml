@@ -5,42 +5,42 @@
         <item
             android:id="@+id/menu_search"
             android:icon="@drawable/ic_outline_search_30"
-            android:title="Search" />
+            android:title="@string/menu_search" />
     </group>
 
     <group android:id="@+id/group_menu_theme">
         <item
             android:id="@+id/menu_theme"
             android:icon="@drawable/ic_outline_color_lens_24"
-            android:title="Theme" />
+            android:title="@string/menu_theme" />
     </group>
 
     <group android:id="@+id/group_menu_language">
         <item
             android:id="@+id/menu_language"
             android:icon="@drawable/ic_outline_language_30"
-            android:title="Language" />
+            android:title="@string/menu_language" />
     </group>
 
     <group android:id="@+id/group_menu_feedback">
         <item
             android:id="@+id/menu_feedback"
             android:icon="@drawable/ic_baseline_feedback_24"
-            android:title="Feedback and Contact" />
+            android:title="@string/menu_feedback" />
     </group>
 
     <group android:id="@+id/group_menu_privacy_policy">
         <item
             android:id="@+id/menu_privacy_policy"
             android:icon="@drawable/ic_baseline_policy_24"
-            android:title="Privacy Policy" />
+            android:title="@string/menu_privacy_policy" />
     </group>
 
     <group android:id="@+id/group_menu_about">
         <item
             android:id="@+id/menu_about"
             android:icon="@drawable/ic_baseline_info_24"
-            android:title="About" />
+            android:title="@string/menu_about" />
     </group>
 
 </menu>

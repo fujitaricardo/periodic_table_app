@@ -2,13 +2,10 @@ package com.fujitalabs.periodic_table;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 
 public class Settings {
     private static Settings instance;
-
-    // menu
-    public final static String[] menuThemeOptions = new String[]{"Light", "Dark"};
-    public final static String[] menuLanguageOptions = new String[]{"English", "Português"};
 
     // shared preferences
     private SharedPreferences sharedPreferences;

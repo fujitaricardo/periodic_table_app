@@ -1,56 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Periodic Table</string>
-    <string name="app_author_signature">Powered by Fujita Labs</string>
-    <string name="app_version">Version 0.0.1</string>
+    <string name="app_name">Tabela Periódica</string>
+    <string name="app_author_signature">Desenvolvido por Fujita Labs</string>
+    <string name="app_version">Versão 0.0.1</string>
     <string name="app_year">2022</string>
     <string name="author_email">labsfujita@gmail.com</string>
     <string name="author_instagram">fujitalabs</string>
 
-    <string name="title_about">About</string>
-    <string name="title_privacy_policy">Privacy Policy</string>
-    <string name="title_feedback">Feedback and Contact</string>
-    <string name="title_filters">Select filters</string>
+    <string name="title_about">Sobre</string>
+    <string name="title_privacy_policy">Política de privacidade</string>
+    <string name="title_feedback">Feedback e contato</string>
+    <string name="title_filters">Selecionar filtros</string>
 
-    <string name="menu_search">Search</string>
-    <string name="menu_filter">Filter</string>
-    <string name="menu_zoom_in">Zoom in</string>
-    <string name="menu_zoom_out">Zoom out</string>
-    <string name="menu_fit_to_screen">Fit to screen</string>
-    <string name="menu_theme">Theme</string>
-    <string name="menu_language">Language</string>
-    <string name="menu_feedback">Feedback and contact</string>
-    <string name="menu_privacy_policy">Privacy Policy</string>
-    <string name="menu_about">About</string>
+    <string name="menu_search">Pesquisar</string>
+    <string name="menu_filter">Filtrar</string>
+    <string name="menu_zoom_in">Aumentar zoom</string>
+    <string name="menu_zoom_out">Diminuir zoom</string>
+    <string name="menu_fit_to_screen">Ajustar à tela</string>
+    <string name="menu_theme">Tema</string>
+    <string name="menu_language">Idioma</string>
+    <string name="menu_feedback">Feedback e contato</string>
+    <string name="menu_privacy_policy">Política de privacidade</string>
+    <string name="menu_about">Sobre</string>
 
-    <string name="dialog_set_theme">Set theme:</string>
-    <string name="dialog_set_language">Set language:</string>
+    <string name="dialog_set_theme">Selecionar tema:</string>
+    <string name="dialog_set_language">Selecionar idioma:</string>
 
     <string name="label_email">E-mail:</string>
     <string name="label_instagram">Instagram:</string>
-    <string name="label_name">Name:</string>
-    <string name="label_symbol">Symbol:</string>
-    <string name="label_atomic_number">Atomic number:</string>
-    <string name="label_atomic_weight">Atomic weight:</string>
+    <string name="label_name">Nome:</string>
+    <string name="label_symbol">Símbolo:</string>
+    <string name="label_atomic_number">Número atômico:</string>
+    <string name="label_atomic_weight">Peso atômico:</string>
 
-    <string name="button_clear_filters">CLEAR FILTERS</string>
-    <string name="button_apply">APPLY</string>
-    <string name="button_save">Save</string>
-    <string name="button_cancel">Cancel</string>
-    <string name="button_see_more">SEE MORE</string>
+    <string name="button_clear_filters">LIMPAR FILTROS</string>
+    <string name="button_apply">APLICAR</string>
+    <string name="button_save">Salvar</string>
+    <string name="button_cancel">Cancelar</string>
+    <string name="button_see_more">VER MAIS</string>
 
-    <string name="theme_light">Light</string>
-    <string name="theme_dark">Dark</string>
+    <string name="theme_light">Claro</string>
+    <string name="theme_dark">Escuro</string>
 
-    <string name="category_nonmetals">Non-metals</string>
-    <string name="category_alkali_metals">Alkali metals</string>
-    <string name="category_alkaline_earth_metals">Alkaline earth metals</string>
-    <string name="category_transition_metals">Transition metals</string>
-    <string name="category_post_transition_metals">Post-transition metals</string>
-    <string name="category_metalloids">Metalloids</string>
-    <string name="category_lanthanides">Lanthanides</string>
-    <string name="category_actinides">Actinides</string>
-    <string name="category_halogens">Halogens</string>
-    <string name="category_noble_gases">Noble gases</string>
+    <string name="category_nonmetals">Não-metais</string>
+    <string name="category_alkali_metals">Metais alcalinos</string>
+    <string name="category_alkaline_earth_metals">Metais alcalino-terrosos</string>
+    <string name="category_transition_metals">Metais de transição</string>
+    <string name="category_post_transition_metals">Metais pós-transição</string>
+    <string name="category_metalloids">Semimetais</string>
+    <string name="category_lanthanides">Lantanídeos</string>
+    <string name="category_actinides">Actinídeos</string>
+    <string name="category_halogens">Halogênios</string>
+    <string name="category_noble_gases">Gases nobres</string>
 
     <string name="label_lanthanides_range">57-71</string>
     <string name="label_actinides_range">89-103</string>

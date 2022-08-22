@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:navigationIcon="@drawable/ic_baseline_close_24"
-        app:title="About"
+        app:title="@string/title_about"
         app:titleCentered="true"
         style="@style/Widget.MaterialComponents.Toolbar.Primary" />
 
@@ -47,25 +47,31 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:text="Periodic Table"
-            android:textSize="24dp"
+            android:text="@string/app_name"
+            android:textSize="24sp"
             android:textStyle="bold"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Powered by Fujita Labs"
-            android:textSize="16dp"/>
+            android:text="@string/app_author_signature"
+            android:textSize="16sp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            android:text="Version 0.0.1"
-            android:textSize="16dp"
-            android:textStyle="bold"/>
+            android:text="@string/app_version"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/app_year"
+            android:textSize="16sp"/>
 
     </LinearLayout>
 

@@ -32,8 +32,8 @@
                         android:id="@+id/mt_app_bar"
                         android:layout_width="match_parent"
                         android:layout_height="?attr/actionBarSize"
-                        app:menu="@menu/app_bar"
                         app:navigationIcon="@drawable/ic_baseline_menu_30"
+                        app:menu="@menu/app_bar"
                         style="@style/Widget.MaterialComponents.Toolbar.Primary" />
 
                 </com.google.android.material.appbar.AppBarLayout>
@@ -90,8 +90,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="start"
-                app:menu="@menu/navigation_menu"
-                android:background="@color/primaryColor"/>
+                android:background="@color/primaryColor"
+                app:menu="@menu/navigation_menu" />
 
         </androidx.drawerlayout.widget.DrawerLayout>
 

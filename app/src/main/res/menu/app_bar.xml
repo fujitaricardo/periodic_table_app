@@ -5,38 +5,38 @@
     <item
         android:id="@+id/appbar_search"
         android:icon="@drawable/ic_baseline_search_24"
-        android:title="Search"
-        android:contentDescription="Search elements"
+        android:title="@string/menu_search"
+        android:contentDescription="@string/menu_search"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/appbar_filter"
         android:icon="@drawable/ic_outline_filter_alt_24"
-        android:title="Filter categories"
-        android:contentDescription="Filter elements by category"
+        android:title="@string/menu_filter"
+        android:contentDescription="@string/menu_filter"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/appbar_zoom_out"
         android:icon="@drawable/ic_baseline_zoom_out_24"
-        android:title="Zoom out"
-        android:contentDescription="Zoom out"
+        android:title="@string/menu_zoom_out"
+        android:contentDescription="@string/menu_zoom_out"
         app:showAsAction="always" />
 
 
     <item
         android:id="@+id/appbar_zoom_in"
         android:icon="@drawable/ic_baseline_zoom_in_24"
-        android:title="Zoom in"
-        android:contentDescription="Zoom in"
+        android:title="@string/menu_zoom_in"
+        android:contentDescription="@string/menu_zoom_in"
         app:showAsAction="always" />
 
 
     <item
         android:id="@+id/appbar_fit_screen"
         android:icon="@drawable/ic_fit_screen_24"
-        android:title="Fit to screen"
-        android:contentDescription="Filter to screen"
+        android:title="@string/menu_fit_to_screen"
+        android:contentDescription="@string/menu_fit_to_screen"
         app:showAsAction="always" />
 
 </menu>

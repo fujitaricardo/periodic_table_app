@@ -40,7 +40,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_slider"
             android:layout_marginTop="15dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:background="@color/primaryBackground"/>
 
         <TextView
@@ -49,11 +49,11 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="15sp"
-            android:text="Name:"
+            android:text="@string/label_name"
             android:textColor="@color/primaryTextColor"
             app:layout_constraintTop_toTopOf="@id/iv_element_card"
             app:layout_constraintLeft_toRightOf="@id/iv_element_card"
-            android:layout_marginLeft="15dp"/>
+            android:layout_marginStart="15dp"/>
 
         <TextView
             android:id="@+id/tv_symbol_label"
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="15sp"
-            android:text="Symbol:"
+            android:text="@string/label_symbol"
             android:textColor="@color/primaryTextColor"
             app:layout_constraintTop_toBottomOf="@id/tv_name_label"
             app:layout_constraintLeft_toLeftOf="@id/tv_name_label"
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="15sp"
-            android:text="Atomic Number:"
+            android:text="@string/label_atomic_number"
             android:textColor="@color/primaryTextColor"
             app:layout_constraintTop_toBottomOf="@id/tv_symbol_label"
             app:layout_constraintLeft_toLeftOf="@id/tv_symbol_label"
@@ -85,7 +85,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="15sp"
-            android:text="Atomic Weight:"
+            android:text="@string/label_atomic_weight"
             android:textColor="@color/primaryTextColor"
             app:layout_constraintTop_toBottomOf="@id/tv_atomic_number_label"
             app:layout_constraintLeft_toLeftOf="@id/tv_atomic_number_label"
@@ -100,7 +100,7 @@
             android:textColor="@color/primaryTextColor"
             app:layout_constraintTop_toTopOf="@id/tv_name_label"
             app:layout_constraintLeft_toRightOf="@id/tv_name_label"
-            android:layout_marginLeft="4dp"/>
+            android:layout_marginStart="4dp"/>
 
         <TextView
             android:id="@+id/tv_symbol"
@@ -111,7 +111,7 @@
             android:textColor="@color/primaryTextColor"
             app:layout_constraintTop_toTopOf="@id/tv_symbol_label"
             app:layout_constraintLeft_toRightOf="@id/tv_symbol_label"
-            android:layout_marginLeft="4dp"/>
+            android:layout_marginStart="4dp"/>
 
         <TextView
             android:id="@+id/tv_atomic_number"
@@ -122,7 +122,7 @@
             android:textColor="@color/primaryTextColor"
             app:layout_constraintTop_toTopOf="@id/tv_atomic_number_label"
             app:layout_constraintLeft_toRightOf="@id/tv_atomic_number_label"
-            android:layout_marginLeft="4dp"/>
+            android:layout_marginStart="4dp"/>
 
         <TextView
             android:id="@+id/tv_atomic_weight"
@@ -133,19 +133,7 @@
             android:textColor="@color/primaryTextColor"
             app:layout_constraintTop_toTopOf="@id/tv_atomic_weight_label"
             app:layout_constraintLeft_toRightOf="@id/tv_atomic_weight_label"
-            android:layout_marginLeft="4dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:justificationMode="inter_word"
-            app:layout_constraintTop_toBottomOf="@id/fl_upper_frame"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/primaryTextColor"
-            android:text="@string/lorem_ipsum"/>
+            android:layout_marginStart="4dp"/>
 
         <TextView
             android:id="@+id/tv_see_more"
@@ -153,11 +141,11 @@
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginRight="25dp"
-            android:layout_marginBottom="25dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
             android:textStyle="bold"
             android:textSize="15sp"
-            android:text="SEE MORE"
+            android:text="@string/button_see_more"
             android:textColor="@color/secondaryTextColor"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

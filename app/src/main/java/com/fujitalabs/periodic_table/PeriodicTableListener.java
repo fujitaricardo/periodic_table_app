@@ -33,7 +33,6 @@ public class PeriodicTableListener implements PeriodicTableGVAdapter.ElementSele
         atomicNumber.setText(Integer.toString(element.getAtomicNumber()));
         atomicWeight.setText(element.getAtomicWeight());
 
-        seeMore.setText("SEE MORE");
         seeMore.setClickable(true);
         seeMore.setOnClickListener(new View.OnClickListener() {
             @Override

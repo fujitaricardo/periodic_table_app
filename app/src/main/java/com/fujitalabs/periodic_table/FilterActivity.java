@@ -2,8 +2,8 @@ package com.fujitalabs.periodic_table;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,8 +23,8 @@ public class FilterActivity extends AppCompatActivity {
     private CheckBox cbActinides;
     private CheckBox cbHalogens;
     private CheckBox cbNobleGases;
-    private TextView tvClearFilters;
-    private TextView tvApply;
+    private Button btClearFilters;
+    private Button btApply;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +37,6 @@ public class FilterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_filter);
 
         mtAppBar = findViewById(R.id.mt_app_bar);
-        mtAppBar.setTitle("Select Filters");
-        mtAppBar.setTitleCentered(true);
         mtAppBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,12 +54,12 @@ public class FilterActivity extends AppCompatActivity {
         cbActinides = findViewById(R.id.cb_actinides);
         cbHalogens = findViewById(R.id.cb_halogens);
         cbNobleGases = findViewById(R.id.cb_noble_gases);
-        tvClearFilters = findViewById(R.id.tv_clear_filters);
-        tvApply = findViewById(R.id.tv_apply);
+        btClearFilters = findViewById(R.id.bt_clear_filters);
+        btApply = findViewById(R.id.tv_apply);
 
-        tvClearFilters.setClickable(true);
-        tvClearFilters.setEnabled(true);
-        tvClearFilters.setOnClickListener(new View.OnClickListener() {
+        btClearFilters.setClickable(true);
+        btClearFilters.setEnabled(true);
+        btClearFilters.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 settings.setFilterOn(false);
@@ -70,9 +68,9 @@ public class FilterActivity extends AppCompatActivity {
             }
         });
 
-        tvApply.setClickable(true);
-        tvApply.setEnabled(true);
-        tvApply.setOnClickListener(new View.OnClickListener() {
+        btApply.setClickable(true);
+        btApply.setEnabled(true);
+        btApply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (isAnyFilterSelected()) {
