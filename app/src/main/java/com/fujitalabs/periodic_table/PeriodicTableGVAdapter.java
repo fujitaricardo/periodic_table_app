@@ -68,7 +68,7 @@ public class PeriodicTableGVAdapter extends ArrayAdapter<Element> {
             elementView.setVisibility(View.GONE);
         } else {
             cvElementCard.setCardBackgroundColor(parent.getResources().getColor(getCardColor(element.getCategory())));
-            tvName.setText(element.getName());
+            tvName.setText(Element.elementStringIds[element.getAtomicNumber()-1]);
             tvSymbol.setText(element.getSymbol());
             tvAtomicNumber.setText(Integer.toString(element.getAtomicNumber()));
 

@@ -108,6 +108,32 @@ public class Element {
         categoryColor.put(CATEGORY_NOBLE_GASES, R.color.nobleGases);
     }
 
+    public static final int[] elementStringIds = {R.string.name_hydrogen, R.string.name_helium, R.string.name_lithium,
+            R.string.name_beryllium, R.string.name_boron, R.string.name_carbon, R.string.name_nitrogen, R.string.name_oxygen,
+            R.string.name_fluorine, R.string.name_neon, R.string.name_sodium, R.string.name_magnesium, R.string.name_aluminium,
+            R.string.name_silicon, R.string.name_phosphorus, R.string.name_sulfur, R.string.name_chlorine, R.string.name_argon,
+            R.string.name_potassium, R.string.name_calcium, R.string.name_scandium, R.string.name_titanium, R.string.name_vanadium,
+            R.string.name_chromium, R.string.name_manganese, R.string.name_iron, R.string.name_cobalt, R.string.name_nickel,
+            R.string.name_copper, R.string.name_zinc, R.string.name_gallium, R.string.name_germanium, R.string.name_arsenic,
+            R.string.name_selenium, R.string.name_bromine, R.string.name_krypton, R.string.name_rubidium, R.string.name_strontium,
+            R.string.name_yttrium, R.string.name_zirconium, R.string.name_niobium, R.string.name_molybdenum, R.string.name_technetium,
+            R.string.name_ruthenium, R.string.name_rhodium, R.string.name_palladium, R.string.name_silver, R.string.name_cadmium,
+            R.string.name_indium, R.string.name_tin, R.string.name_antimony, R.string.name_tellurium, R.string.name_iodine,
+            R.string.name_xenon, R.string.name_caesium, R.string.name_barium, R.string.name_lanthanum, R.string.name_cerium,
+            R.string.name_praseodymium, R.string.name_neodymium, R.string.name_promethium, R.string.name_samarium,
+            R.string.name_europium, R.string.name_gadolinium, R.string.name_terbium, R.string.name_dysprosium, R.string.name_holmium,
+            R.string.name_erbium, R.string.name_thulium, R.string.name_ytterbium, R.string.name_lutetium, R.string.name_hafnium,
+            R.string.name_tantalum, R.string.name_tungsten, R.string.name_rhenium, R.string.name_osmium, R.string.name_iridium,
+            R.string.name_platinum, R.string.name_gold, R.string.name_mercury, R.string.name_thallium, R.string.name_lead,
+            R.string.name_bismuth, R.string.name_polonium, R.string.name_astatine, R.string.name_radon, R.string.name_francium,
+            R.string.name_radium, R.string.name_actinium, R.string.name_thorium, R.string.name_protactinium, R.string.name_uranium,
+            R.string.name_neptunium, R.string.name_plutonium, R.string.name_americium, R.string.name_curium, R.string.name_berkelium,
+            R.string.name_californium, R.string.name_einsteinium, R.string.name_fermium, R.string.name_mendelevium,
+            R.string.name_nobelium, R.string.name_lawrencium, R.string.name_rutherfordium, R.string.name_dubnium, R.string.name_seaborgium,
+            R.string.name_bohrium, R.string.name_hassium, R.string.name_meitnerium, R.string.name_darmstadtium, R.string.name_roentgenium,
+            R.string.name_copernicium, R.string.name_nihonium, R.string.name_flerovium, R.string.name_moscovium, R.string.name_livermorium,
+            R.string.name_tennessine, R.string.name_oganesson};
+
     public static Integer getColorByCategory(String category) {
         return categoryColor.get(category);
     }

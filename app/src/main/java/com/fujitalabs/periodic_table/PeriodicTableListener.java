@@ -28,7 +28,7 @@ public class PeriodicTableListener implements PeriodicTableGVAdapter.ElementSele
         TextView atomicWeight = bsElementSheet.findViewById(R.id.tv_atomic_weight);
         TextView seeMore = bsElementSheet.findViewById(R.id.tv_see_more);
 
-        name.setText(element.getName());
+        name.setText(Element.elementStringIds[element.getAtomicNumber()-1]);
         symbol.setText(element.getSymbol());
         atomicNumber.setText(Integer.toString(element.getAtomicNumber()));
         atomicWeight.setText(element.getAtomicWeight());
