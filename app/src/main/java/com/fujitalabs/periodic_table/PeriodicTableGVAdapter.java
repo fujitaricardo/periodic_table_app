@@ -102,34 +102,34 @@ public class PeriodicTableGVAdapter extends ArrayAdapter<Element> {
         switch (category) {
             case Element.CATEGORY_NONMETALS:
                 return settings.isNonMetalsChecked() ?
-                        Element.getColorByCategory(Element.CATEGORY_NONMETALS) : R.color.unselected;
+                        Element.categoryColor.get(Element.CATEGORY_NONMETALS) : R.color.unselected;
             case Element.CATEGORY_ALKALI_METALS:
                 return settings.isAlkaliMetalsCheck() ?
-                        Element.getColorByCategory(Element.CATEGORY_ALKALI_METALS) : R.color.unselected;
+                        Element.categoryColor.get(Element.CATEGORY_ALKALI_METALS) : R.color.unselected;
             case Element.CATEGORY_ALKALINE_EARTH_METALS:
                 return settings.isAlkalineEarthMetalsChecked() ?
-                        Element.getColorByCategory(Element.CATEGORY_ALKALINE_EARTH_METALS) : R.color.unselected;
+                        Element.categoryColor.get(Element.CATEGORY_ALKALINE_EARTH_METALS) : R.color.unselected;
             case Element.CATEGORY_TRANSITION_METALS:
                 return settings.isTransitionMetalsChecked() ?
-                        Element.getColorByCategory(Element.CATEGORY_TRANSITION_METALS) : R.color.unselected;
+                        Element.categoryColor.get(Element.CATEGORY_TRANSITION_METALS) : R.color.unselected;
             case Element.CATEGORY_POST_TRANSITION_METALS:
                 return settings.isPostTransitionMetalsChecked() ?
-                        Element.getColorByCategory(Element.CATEGORY_POST_TRANSITION_METALS) : R.color.unselected;
+                        Element.categoryColor.get(Element.CATEGORY_POST_TRANSITION_METALS) : R.color.unselected;
             case Element.CATEGORY_METALLOIDS:
                 return settings.isMetalloidsChecked() ?
-                        Element.getColorByCategory(Element.CATEGORY_METALLOIDS) : R.color.unselected;
+                        Element.categoryColor.get(Element.CATEGORY_METALLOIDS) : R.color.unselected;
             case Element.CATEGORY_LANTHANIDES:
                 return settings.isLanthanidesChecked() ?
-                        Element.getColorByCategory(Element.CATEGORY_LANTHANIDES) : R.color.unselected;
+                        Element.categoryColor.get(Element.CATEGORY_LANTHANIDES) : R.color.unselected;
             case Element.CATEGORY_ACTINIDES:
                 return settings.isActinidesChecked() ?
-                        Element.getColorByCategory(Element.CATEGORY_ACTINIDES) : R.color.unselected;
+                        Element.categoryColor.get(Element.CATEGORY_ACTINIDES) : R.color.unselected;
             case Element.CATEGORY_HALOGENS:
                 return settings.isHalogensChecked() ?
-                        Element.getColorByCategory(Element.CATEGORY_HALOGENS) : R.color.unselected;
+                        Element.categoryColor.get(Element.CATEGORY_HALOGENS) : R.color.unselected;
             case Element.CATEGORY_NOBLE_GASES:
                 return settings.isNobleGasesChecked() ?
-                        Element.getColorByCategory(Element.CATEGORY_NOBLE_GASES) : R.color.unselected;
+                        Element.categoryColor.get(Element.CATEGORY_NOBLE_GASES) : R.color.unselected;
             default:
                 return R.color.unselected;
         }

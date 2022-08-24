@@ -99,7 +99,7 @@ public class MenuListener implements NavigationView.OnNavigationItemSelectedList
         selectedLanguage = settings.getSelectedLanguage();
         String[] menuLanguageOptions = new String[]{"English", "Português"};
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
-        alertDialog.setTitle("Set language:");
+        alertDialog.setTitle(context.getResources().getString(R.string.dialog_set_language));
 
         alertDialog.setSingleChoiceItems(menuLanguageOptions, selectedLanguage, new DialogInterface.OnClickListener() {
             @SuppressLint("SetTextI18n")

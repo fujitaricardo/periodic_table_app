@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
@@ -22,19 +23,18 @@ public class PeriodicTableListener implements PeriodicTableGVAdapter.ElementSele
 
     @Override
     public void onElementSelected(Element element) {
-        TextView name = bsElementSheet.findViewById(R.id.tv_name);
-        TextView symbol = bsElementSheet.findViewById(R.id.tv_symbol);
+        TextView name = bsElementSheet.findViewById(R.id.tv_element_name);
         TextView atomicNumber = bsElementSheet.findViewById(R.id.tv_atomic_number);
         TextView atomicWeight = bsElementSheet.findViewById(R.id.tv_atomic_weight);
-        TextView seeMore = bsElementSheet.findViewById(R.id.tv_see_more);
+        ImageButton readMore = bsElementSheet.findViewById(R.id.ib_read_more);
 
         name.setText(Element.elementStringIds[element.getAtomicNumber()-1]);
-        symbol.setText(element.getSymbol());
+        name.setBackground(context.getDrawable(Element.categoryGradient.get(element.getCategory())));
         atomicNumber.setText(Integer.toString(element.getAtomicNumber()));
         atomicWeight.setText(element.getAtomicWeight());
 
-        seeMore.setClickable(true);
-        seeMore.setOnClickListener(new View.OnClickListener() {
+        readMore.setClickable(true);
+        readMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, ElementDataActivity.class);

@@ -93,7 +93,7 @@ public class Element {
     public static final String CATEGORY_HALOGENS = "HALOGENS";
     public static final String CATEGORY_NOBLE_GASES = "NOBLE_GASES";
 
-    private static final Map<String, Integer> categoryColor;
+    public static final Map<String, Integer> categoryColor;
     static {
         categoryColor = new HashMap<>();
         categoryColor.put(CATEGORY_NONMETALS, R.color.nonMetals);
@@ -106,6 +106,21 @@ public class Element {
         categoryColor.put(CATEGORY_ACTINIDES, R.color.actinides);
         categoryColor.put(CATEGORY_HALOGENS, R.color.halogens);
         categoryColor.put(CATEGORY_NOBLE_GASES, R.color.nobleGases);
+    }
+
+    public static final Map<String, Integer> categoryGradient;
+    static {
+        categoryGradient = new HashMap<>();
+        categoryGradient.put(CATEGORY_NONMETALS, R.drawable.gradient_nonmetals);
+        categoryGradient.put(CATEGORY_ALKALI_METALS, R.drawable.gradient_alkali_metals);
+        categoryGradient.put(CATEGORY_ALKALINE_EARTH_METALS, R.drawable.gradient_alkali_earth_metals);
+        categoryGradient.put(CATEGORY_TRANSITION_METALS, R.drawable.gradient_transition_metals);
+        categoryGradient.put(CATEGORY_POST_TRANSITION_METALS, R.drawable.gradient_post_transition_metals);
+        categoryGradient.put(CATEGORY_METALLOIDS, R.drawable.gradient_metalloids);
+        categoryGradient.put(CATEGORY_LANTHANIDES, R.drawable.gradient_lanthanides);
+        categoryGradient.put(CATEGORY_ACTINIDES, R.drawable.gradient_actinides);
+        categoryGradient.put(CATEGORY_HALOGENS, R.drawable.gradient_halogens);
+        categoryGradient.put(CATEGORY_NOBLE_GASES, R.drawable.gradient_noble_gases);
     }
 
     public static final int[] elementStringIds = {R.string.name_hydrogen, R.string.name_helium, R.string.name_lithium,
@@ -133,10 +148,6 @@ public class Element {
             R.string.name_bohrium, R.string.name_hassium, R.string.name_meitnerium, R.string.name_darmstadtium, R.string.name_roentgenium,
             R.string.name_copernicium, R.string.name_nihonium, R.string.name_flerovium, R.string.name_moscovium, R.string.name_livermorium,
             R.string.name_tennessine, R.string.name_oganesson};
-
-    public static Integer getColorByCategory(String category) {
-        return categoryColor.get(category);
-    }
 
     // Default getters and setters
 

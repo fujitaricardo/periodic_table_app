@@ -31,6 +31,16 @@
     <string name="label_symbol">Symbol:</string>
     <string name="label_atomic_number">Atomic number:</string>
     <string name="label_atomic_weight">Atomic weight:</string>
+    <string name="label_electrons">Electrons</string>
+    <string name="label_protons">Protons</string>
+    <string name="label_neutrons">Neutrons</string>
+    <string name="label_latin_name">Latin name:</string>
+    <string name="label_discovery">Discovery:</string>
+    <string name="label_group">Group:</string>
+    <string name="label_period">Period:</string>
+    <string name="label_block">Block:</string>
+    <string name="label_category">Category:</string>
+    <string name="label_cas_number">CAS number:</string>
 
     <string name="button_clear_filters">CLEAR FILTERS</string>
     <string name="button_apply">APPLY</string>
@@ -174,6 +184,4 @@
     <string name="name_tennessine">Tennessine</string>
     <string name="name_oganesson">Oganesson</string>
 
-    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras risus neque, pellentesque non turpis in, sollicitudin facilisis dui. Phasellus vehicula elementum diam, faucibus tempor felis facilisis sed. Ut fermentum dui dui, id vestibulum dui malesuada quis. Nunc placerat tristique dui nec pretium. Nulla elit velit, sollicitudin sed arcu vitae, viverra pulvinar felis. Sed vulputate gravida velit, eu accumsan ex iaculis quis. Sed rhoncus nisl fermentum ligula elementum, non malesuada nunc blandit. Nunc non ante bibendum, varius dolor non, interdum magna. Etiam turpis sapien, dignissim mollis blandit ut, aliquam et libero. Fusce diam erat, dignissim vel lectus eget, aliquam viverra purus. Donec quis ligula dolor. Praesent ligula risus, tempor sit amet gravida sed, bibendum id felis. Pellentesque interdum sagittis lorem sed placerat. Maecenas gravida nunc tristique nisi cursus, at mollis quam scelerisque. Nam porttitor arcu vitae imperdiet blandit. Curabitur mattis convallis mollis. In hac habitasse platea dictumst. Phasellus vestibulum, erat a tristique porttitor, nibh nulla iaculis ipsum, id tristique justo mauris sit amet nibh. In lobortis vestibulum massa, in vehicula nulla faucibus in.</string>
-    <string name="lorem_ipsum_2p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum porttitor sem, iaculis interdum erat tristique in. Vivamus venenatis velit ut lectus condimentum porta. Pellentesque cursus varius lacus. Proin eleifend posuere ex quis tempor. Quisque sodales tincidunt nisl ac pharetra. Nunc egestas euismod sapien facilisis tincidunt. Fusce sit amet enim ut mi rhoncus dignissim. Sed non est elit. Nullam sit amet posuere tellus.Aenean at tempus dolor, vel varius enim. Sed neque nulla, suscipit sed ex et, iaculis feugiat odio. Duis pulvinar nibh sed dolor fermentum fringilla. Proin interdum tempor nulla, a dictum diam pretium vel. Curabitur leo ante, consectetur fringilla auctor ut, convallis quis quam. Nam non mi pellentesque, placerat libero vitae, malesuada velit. Fusce ornare tincidunt est, ac tempus diam pulvinar eget. Sed eget laoreet arcu. Proin nisi lectus, sagittis et ligula feugiat, tempor imperdiet enim. Duis in tempus nulla. Donec feugiat vel tortor et faucibus. Nullam laoreet dolor eget scelerisque venenatis. Nam sapien lectus, aliquet nec ipsum ut, venenatis condimentum massa. Nam placerat tortor diam, nec condimentum leo sodales id. Ut molestie rhoncus lacus, at aliquet metus interdum sed. Morbi blandit lacus nisl, ac vestibulum ante ullamcorper ac. Suspendisse sit amet hendrerit orci, sed lobortis felis. Fusce imperdiet ipsum elit, in venenatis ex viverra et. Aliquam vestibulum facilisis lacinia. Vestibulum auctor nunc sed ex posuere finibus. Fusce dapibus malesuada mi ac fermentum. Nam quis augue maximus, aliquam mi elementum, aliquet justo. Sed eget tellus nec ipsum lacinia sodales in eget lorem. Nam et pulvinar erat. Aenean eu mauris eu sapien fringilla sodales. Cras facilisis sapien ex, a mollis urna dapibus a. Quisque vulputate nulla ac ex pulvinar, non ornare arcu eleifend. Aenean arcu ante, tincidunt quis augue lacinia, aliquet tincidunt lectus. Aliquam rhoncus id justo id vestibulum.</string>
 </resources>
