@@ -66,17 +66,17 @@
                     app:hasClickableChildren="true">
 
                     <FrameLayout
-                        android:layout_width="2040dp"
-                        android:layout_height="1200dp"
-                        android:padding="25dp">
+                        android:layout_width="2000dp"
+                        android:layout_height="1220dp">
 
                         <GridView
                             android:id="@+id/gv_periodic_table"
-                            android:layout_width="1990dp"
-                            android:layout_height="1150dp"
+                            android:layout_width="2095dp"
+                            android:layout_height="1255dp"
+                            android:layout_gravity="center"
                             android:horizontalSpacing="5dp"
                             android:verticalSpacing="5dp"
-                            android:numColumns="19"
+                            android:numColumns="20"
                             android:stretchMode="columnWidth" />
 
                     </FrameLayout>
