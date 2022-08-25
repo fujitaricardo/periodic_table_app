@@ -2,6 +2,7 @@ package com.fujitalabs.periodic_table;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
@@ -58,6 +59,9 @@ public class PeriodicTableListener implements PeriodicTableGVAdapter.ElementSele
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, ElementDataActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt(ElementDataActivity.ELEMENT_EXTRA, element.getAtomicNumber());
+                intent.putExtras(bundle);
                 context.startActivity(intent);
             }
         });

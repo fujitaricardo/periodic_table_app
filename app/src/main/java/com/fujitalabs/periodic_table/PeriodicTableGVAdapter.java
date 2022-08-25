@@ -2,6 +2,7 @@ package com.fujitalabs.periodic_table;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -131,6 +132,9 @@ public class PeriodicTableGVAdapter extends ArrayAdapter<Element> {
             public boolean onLongClick(View v) {
                 v.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.on_long_click));
                 Intent intent = new Intent(getContext(), ElementDataActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt(ElementDataActivity.ELEMENT_EXTRA, element.getAtomicNumber());
+                intent.putExtras(bundle);
                 getContext().startActivity(intent);
                 return false;
             }
