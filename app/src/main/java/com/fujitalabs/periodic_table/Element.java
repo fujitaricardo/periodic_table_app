@@ -44,13 +44,19 @@ public class Element {
     private String category;
 
     @ColumnInfo(name = "group")
-    private Integer group;
+    private String group;
 
     @ColumnInfo(name = "period")
-    private Integer period;
+    private String period;
 
     @ColumnInfo(name = "block")
     private String block;
+
+    @ColumnInfo(name = "discovery")
+    private String discovery;
+
+    @ColumnInfo(name = "latin_name")
+    private String latinName;
 
     @ColumnInfo(name = "electron_configuration")
     private String electronConfiguration;
@@ -121,6 +127,21 @@ public class Element {
         categoryGradient.put(CATEGORY_ACTINIDES, R.drawable.gradient_actinides);
         categoryGradient.put(CATEGORY_HALOGENS, R.drawable.gradient_halogens);
         categoryGradient.put(CATEGORY_NOBLE_GASES, R.drawable.gradient_noble_gases);
+    }
+
+    public static final Map<String, Integer> categoryName;
+    static {
+        categoryName = new HashMap<>();
+        categoryName.put(CATEGORY_NONMETALS, R.string.category_nonmetals);
+        categoryName.put(CATEGORY_ALKALI_METALS, R.string.category_alkali_metals);
+        categoryName.put(CATEGORY_ALKALINE_EARTH_METALS, R.string.category_alkaline_earth_metals);
+        categoryName.put(CATEGORY_TRANSITION_METALS, R.string.category_post_transition_metals);
+        categoryName.put(CATEGORY_POST_TRANSITION_METALS, R.string.category_post_transition_metals);
+        categoryName.put(CATEGORY_METALLOIDS, R.string.category_metalloids);
+        categoryName.put(CATEGORY_LANTHANIDES, R.string.category_lanthanides);
+        categoryName.put(CATEGORY_ACTINIDES, R.string.category_actinides);
+        categoryName.put(CATEGORY_HALOGENS, R.string.category_halogens);
+        categoryName.put(CATEGORY_NOBLE_GASES, R.string.category_noble_gases);
     }
 
     public static final int[] elementStringIds = {R.string.name_hydrogen, R.string.name_helium, R.string.name_lithium,
@@ -231,19 +252,19 @@ public class Element {
         this.category = category;
     }
 
-    public Integer getGroup() {
+    public String getGroup() {
         return group;
     }
 
-    public void setGroup(Integer group) {
+    public void setGroup(String group) {
         this.group = group;
     }
 
-    public Integer getPeriod() {
+    public String getPeriod() {
         return period;
     }
 
-    public void setPeriod(Integer period) {
+    public void setPeriod(String period) {
         this.period = period;
     }
 
@@ -253,6 +274,22 @@ public class Element {
 
     public void setBlock(String block) {
         this.block = block;
+    }
+
+    public String getDiscovery() {
+        return discovery;
+    }
+
+    public void setDiscovery(String discovery) {
+        this.discovery = discovery;
+    }
+
+    public String getLatinName() {
+        return latinName;
+    }
+
+    public void setLatinName(String latinName) {
+        this.latinName = latinName;
     }
 
     public String getElectronConfiguration() {

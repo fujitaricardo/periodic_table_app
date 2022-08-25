@@ -31,6 +31,7 @@
     <string name="label_symbol">Symbol:</string>
     <string name="label_atomic_number">Atomic number:</string>
     <string name="label_atomic_weight">Atomic weight:</string>
+    <string name="label_atomic_weight_unit">(u, g/mol)</string>
     <string name="label_electrons">Electrons</string>
     <string name="label_protons">Protons</string>
     <string name="label_neutrons">Neutrons</string>

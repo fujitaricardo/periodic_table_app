@@ -122,6 +122,14 @@
                         android:textColor="@color/primaryTextColor"
                         android:text="1.008" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@color/primaryTextColor"
+                        android:text="@string/label_atomic_weight_unit" />
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -160,6 +168,7 @@
                             android:text="@string/label_electrons"/>
 
                         <TextView
+                            android:id="@+id/tv_electrons"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -168,7 +177,7 @@
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:textColor="@color/primaryTextColor"
-                            android:text="10"/>
+                            android:text="1"/>
 
                     </LinearLayout>
 
@@ -203,6 +212,7 @@
                             android:text="@string/label_protons"/>
 
                         <TextView
+                            android:id="@+id/tv_protons"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -211,7 +221,7 @@
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:textColor="@color/primaryTextColor"
-                            android:text="10"/>
+                            android:text="1"/>
 
                     </LinearLayout>
 
@@ -246,6 +256,7 @@
                             android:text="@string/label_neutrons"/>
 
                         <TextView
+                            android:id="@+id/tv_neutrons"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -254,7 +265,7 @@
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:textColor="@color/primaryTextColor"
-                            android:text="10"/>
+                            android:text="0"/>
 
                     </LinearLayout>
 
@@ -294,68 +305,173 @@
                 android:orientation="vertical"
                 android:background="@color/primaryBackground">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="20dp"
-                    android:textStyle="bold"
-                    android:text="@string/label_latin_name"
-                    android:textColor="@color/primaryTextColor"/>
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="20dp"
-                    android:textStyle="bold"
-                    android:text="@string/label_discovery"
-                    android:textColor="@color/primaryTextColor"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:textStyle="bold"
+                        android:text="@string/label_latin_name"
+                        android:textColor="@color/primaryTextColor"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="20dp"
-                    android:textStyle="bold"
-                    android:text="@string/label_group"
-                    android:textColor="@color/primaryTextColor"/>
+                    <TextView
+                        android:id="@+id/tv_latin_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@color/primaryTextColor"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="20dp"
-                    android:textStyle="bold"
-                    android:text="@string/label_period"
-                    android:textColor="@color/primaryTextColor"/>
+                </LinearLayout>
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="20dp"
-                    android:textStyle="bold"
-                    android:text="@string/label_block"
-                    android:textColor="@color/primaryTextColor"/>
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="20dp"
-                    android:textStyle="bold"
-                    android:text="@string/label_category"
-                    android:textColor="@color/primaryTextColor"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:textStyle="bold"
+                        android:text="@string/label_symbol"
+                        android:textColor="@color/primaryTextColor"/>
 
-                <TextView
+                    <TextView
+                        android:id="@+id/tv_symbol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@color/primaryTextColor"/>
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="20dp"
-                    android:textStyle="bold"
-                    android:text="@string/label_cas_number"
-                    android:textColor="@color/primaryTextColor"/>
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:textStyle="bold"
+                        android:text="@string/label_group"
+                        android:textColor="@color/primaryTextColor"/>
+
+                    <TextView
+                        android:id="@+id/tv_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@color/primaryTextColor"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:textStyle="bold"
+                        android:text="@string/label_period"
+                        android:textColor="@color/primaryTextColor"/>
+
+                    <TextView
+                        android:id="@+id/tv_period"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@color/primaryTextColor"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:textStyle="bold"
+                        android:text="@string/label_block"
+                        android:textColor="@color/primaryTextColor"/>
+
+                    <TextView
+                        android:id="@+id/tv_block"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@color/primaryTextColor"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:textStyle="bold"
+                        android:text="@string/label_category"
+                        android:textColor="@color/primaryTextColor"/>
+
+                    <TextView
+                        android:id="@+id/tv_category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@color/primaryTextColor"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:textStyle="bold"
+                        android:text="@string/label_cas_number"
+                        android:textColor="@color/primaryTextColor"/>
+
+                    <TextView
+                        android:id="@+id/tv_cas_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@color/primaryTextColor"/>
+
+                </LinearLayout>
 
             </LinearLayout>
 
